@@ -1,0 +1,172 @@
+/**
+ * GENERATED FILE — do not edit.
+ *
+ * Source: figma/exports/*.json → packages/tokens/src/semantic.ts
+ * Regenerate: pnpm tokens
+ */
+
+/*
+ * `inline` makes utilities resolve to `var(--un-…)` rather than to a snapshot of the value, so a
+ * `data-un-theme` swap re-colours live. `reference` stops Tailwind emitting theme variables of
+ * its own — nothing but our namespaced tokens reaches the consumer's page.
+ */
+@theme inline reference {
+  /* colours — every role, resolved live through its custom property */
+  --color-accent: var(--un-accent);
+  --color-accent-foreground: var(--un-accent-foreground);
+  --color-alert: var(--un-alert);
+  --color-background: var(--un-background);
+  --color-bg-accent-50: var(--un-bg-accent-50);
+  --color-bg-destructive-10: var(--un-bg-destructive-10);
+  --color-bg-muted-40: var(--un-bg-muted-40);
+  --color-bg-muted-50: var(--un-bg-muted-50);
+  --color-border: var(--un-border);
+  --color-border-destructive-50: var(--un-border-destructive-50);
+  --color-border-muted-40: var(--un-border-muted-40);
+  --color-card: var(--un-card);
+  --color-card-foreground: var(--un-card-foreground);
+  --color-chart-1: var(--un-chart-1);
+  --color-chart-2: var(--un-chart-2);
+  --color-chart-3: var(--un-chart-3);
+  --color-chart-4: var(--un-chart-4);
+  --color-chart-5: var(--un-chart-5);
+  --color-chart-6: var(--un-chart-6);
+  --color-chart-area-from: var(--un-chart-area-from);
+  --color-chart-area-to: var(--un-chart-area-to);
+  --color-chart-axis: var(--un-chart-axis);
+  --color-chart-grid: var(--un-chart-grid);
+  --color-chart-zero-line: var(--un-chart-zero-line);
+  --color-control: var(--un-control);
+  --color-control-hover: var(--un-control-hover);
+  --color-destructive: var(--un-destructive);
+  --color-destructive-20-hover: var(--un-destructive-20-hover);
+  --color-destructive-foreground: var(--un-destructive-foreground);
+  --color-destructive-hover: var(--un-destructive-hover);
+  --color-edge-angle: var(--un-edge-angle);
+  --color-edge-stops: var(--un-edge-stops);
+  --color-edge-stops-accent: var(--un-edge-stops-accent);
+  --color-edge-stops-error: var(--un-edge-stops-error);
+  --color-edge-stops-strong: var(--un-edge-stops-strong);
+  --color-emphasis-wash: var(--un-emphasis-wash);
+  --color-emphasis-wash-negative: var(--un-emphasis-wash-negative);
+  --color-foreground: var(--un-foreground);
+  --color-info: var(--un-info);
+  --color-input: var(--un-input);
+  --color-muted: var(--un-muted);
+  --color-muted-foreground: var(--un-muted-foreground);
+  --color-negative: var(--un-negative);
+  --color-neon-green: var(--un-neon-green);
+  --color-neutral-value: var(--un-neutral-value);
+  --color-overlay-scrim: var(--un-overlay-scrim);
+  --color-popover: var(--un-popover);
+  --color-popover-foreground: var(--un-popover-foreground);
+  --color-positive: var(--un-positive);
+  --color-primary: var(--un-primary);
+  --color-primary-foreground: var(--un-primary-foreground);
+  --color-primary-hover: var(--un-primary-hover);
+  --color-ring: var(--un-ring);
+  --color-secondary: var(--un-secondary);
+  --color-secondary-foreground: var(--un-secondary-foreground);
+  --color-secondary-hover: var(--un-secondary-hover);
+  --color-sidebar-accent: var(--un-sidebar-accent);
+  --color-sidebar-accent-foreground: var(--un-sidebar-accent-foreground);
+  --color-sidebar-background: var(--un-sidebar-background);
+  --color-sidebar-border: var(--un-sidebar-border);
+  --color-sidebar-foreground: var(--un-sidebar-foreground);
+  --color-sidebar-foreground-70: var(--un-sidebar-foreground-70);
+  --color-sidebar-primary: var(--un-sidebar-primary);
+  --color-sidebar-primary-foreground: var(--un-sidebar-primary-foreground);
+  --color-sidebar-ring: var(--un-sidebar-ring);
+  --color-success: var(--un-success);
+  --color-success-hover: var(--un-success-hover);
+  --color-surface-floating: var(--un-surface-floating);
+  --color-tint-brand: var(--un-tint-brand);
+  --color-tint-chart: var(--un-tint-chart);
+  --color-tint-info: var(--un-tint-info);
+  --color-warning: var(--un-warning);
+
+  /* type — each size carries its paired line height, see textLeading in semantic.ts */
+  --text-10: var(--un-text-10);
+  --text-10--line-height: var(--un-leading-15);
+  --text-11: var(--un-text-11);
+  --text-11--line-height: var(--un-leading-4);
+  --text-13: var(--un-text-13);
+  --text-13--line-height: var(--un-leading-5);
+  --text-15: var(--un-text-15);
+  --text-15--line-height: var(--un-leading-22);
+  --text-21: var(--un-text-21);
+  --text-21--line-height: var(--un-leading-8);
+  --text-28: var(--un-text-28);
+  --text-28--line-height: var(--un-leading-9);
+  --text-2xl: var(--un-text-2xl);
+  --text-2xl--line-height: var(--un-leading-8);
+  --text-3xl: var(--un-text-3xl);
+  --text-3xl--line-height: var(--un-leading-9);
+  --text-4xl: var(--un-text-4xl);
+  --text-4xl--line-height: var(--un-leading-10);
+  --text-5xl: var(--un-text-5xl);
+  --text-5xl--line-height: 1;
+  --text-6xl: var(--un-text-6xl);
+  --text-6xl--line-height: 1;
+  --text-7xl: var(--un-text-7xl);
+  --text-7xl--line-height: 1;
+  --text-8xl: var(--un-text-8xl);
+  --text-8xl--line-height: 1;
+  --text-9xl: var(--un-text-9xl);
+  --text-9xl--line-height: 1;
+  --text-base: var(--un-text-base);
+  --text-base--line-height: var(--un-leading-6);
+  --text-lg: var(--un-text-lg);
+  --text-lg--line-height: var(--un-leading-7);
+  --text-sm: var(--un-text-sm);
+  --text-sm--line-height: var(--un-leading-5);
+  --text-xl: var(--un-text-xl);
+  --text-xl--line-height: var(--un-leading-7);
+  --text-xs: var(--un-text-xs);
+  --text-xs--line-height: var(--un-leading-4);
+
+  /* line heights */
+  --leading-10: var(--un-leading-10);
+  --leading-15: var(--un-leading-15);
+  --leading-22: var(--un-leading-22);
+  --leading-3: var(--un-leading-3);
+  --leading-4: var(--un-leading-4);
+  --leading-5: var(--un-leading-5);
+  --leading-6: var(--un-leading-6);
+  --leading-7: var(--un-leading-7);
+  --leading-8: var(--un-leading-8);
+  --leading-9: var(--un-leading-9);
+
+  /*
+   * Spacing is ONE multiplier, not a list.
+   *
+   * Tailwind v4 derives every numeric spacing utility as `calc(var(--spacing) * n)`. Emitting
+   * the scale as individual `--spacing-4` entries would look tidier and quietly break the
+   * fractional and `px` steps, because `p-0.5` and `p-px` have no matching key. Our scale is
+   * the Tailwind scale — 1 = 4px — so a single multiplier reproduces all of it exactly.
+   */
+  --spacing: var(--un-space-1);
+
+  /*
+   * Radii follow the shadcn convention: `rounded-lg` is the base knob and the smaller steps are
+   * derived from it, so a consumer setting `--un-radius` reshapes every control at once.
+   */
+  --radius-sm: var(--un-radius-sm);
+  --radius-md: var(--un-radius-md);
+  --radius-lg: var(--un-radius);
+  --radius-xl: calc(var(--un-radius) + 4px);
+  --radius-DEFAULT: var(--un-radius-md);
+  --radius-full: 9999px;
+
+  /* fonts */
+  --font-sans: var(--un-font-sans);
+  --font-serif: var(--un-font-serif);
+  --font-mono: var(--un-font-mono);
+  --font-display: var(--un-font-display);
+
+  /* easing */
+  --ease-accelerate: var(--un-ease-accelerate);
+  --ease-decelerate: var(--un-ease-decelerate);
+  --ease-emphasized: var(--un-ease-emphasized);
+  --ease-standard: var(--un-ease-standard);
+}

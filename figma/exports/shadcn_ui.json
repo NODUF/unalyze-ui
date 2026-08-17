@@ -1,0 +1,1952 @@
+{
+  "id": "VariableCollectionId:23:1105",
+  "name": "shadcn/ui",
+  "modes": {
+    "900:0": "light/slate",
+    "900:1": "dark/slate"
+  },
+  "variableIds": [
+    "VariableID:900:9019",
+    "VariableID:900:9020",
+    "VariableID:900:9021",
+    "VariableID:900:9022",
+    "VariableID:900:9023",
+    "VariableID:900:9024",
+    "VariableID:900:9025",
+    "VariableID:900:9026",
+    "VariableID:900:9027",
+    "VariableID:900:9028",
+    "VariableID:900:9029",
+    "VariableID:900:9030",
+    "VariableID:900:9031",
+    "VariableID:900:9032",
+    "VariableID:900:9033",
+    "VariableID:900:9034",
+    "VariableID:900:9035",
+    "VariableID:900:9036",
+    "VariableID:900:9037",
+    "VariableID:900:9038",
+    "VariableID:900:9039",
+    "VariableID:900:9040",
+    "VariableID:900:9041",
+    "VariableID:900:9042",
+    "VariableID:900:9043",
+    "VariableID:900:9044",
+    "VariableID:900:9045",
+    "VariableID:900:9046",
+    "VariableID:900:9047",
+    "VariableID:900:9048",
+    "VariableID:900:9049",
+    "VariableID:900:9050",
+    "VariableID:900:9051",
+    "VariableID:900:9052",
+    "VariableID:900:9053",
+    "VariableID:900:9054",
+    "VariableID:900:9055",
+    "VariableID:900:9056",
+    "VariableID:900:9057",
+    "VariableID:900:9058",
+    "VariableID:900:9059"
+  ],
+  "variables": [
+    {
+      "id": "VariableID:900:9019",
+      "name": "background",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "base/white"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Canvas/black"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9020",
+      "name": "sidebar/background",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9803921568627451,
+          "g": 0.9803921568627451,
+          "b": 0.9803921568627451,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9803921568627451,
+            "b": 0.9803921568627451,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/50"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Canvas/black"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9021",
+      "name": "bg-muted-40",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9450980392156862,
+          "g": 0.9607843137254902,
+          "b": 0.9764705882352941,
+          "a": 0.4
+        },
+        "900:1": {
+          "r": 0.6823529411764706,
+          "g": 0.6823529411764706,
+          "b": 0.6823529411764706,
+          "a": 0.04
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9450980392156862,
+            "g": 0.9607843137254902,
+            "b": 0.9764705882352941,
+            "a": 0.4
+          },
+          "alias": null
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.6823529411764706,
+            "g": 0.6823529411764706,
+            "b": 0.6823529411764706,
+            "a": 0.04
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9022",
+      "name": "bg-muted-50",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9450980392156862,
+          "g": 0.9607843137254902,
+          "b": 0.9764705882352941,
+          "a": 0.5
+        },
+        "900:1": {
+          "r": 0.6823529411764706,
+          "g": 0.6823529411764706,
+          "b": 0.6823529411764706,
+          "a": 0.05
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9450980392156862,
+            "g": 0.9607843137254902,
+            "b": 0.9764705882352941,
+            "a": 0.5
+          },
+          "alias": null
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.6823529411764706,
+            "g": 0.6823529411764706,
+            "b": 0.6823529411764706,
+            "a": 0.05
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9023",
+      "name": "bg-accent-50",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9450980392156862,
+          "g": 0.9607843137254902,
+          "b": 0.9764705882352941,
+          "a": 0.5
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 0.05
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9450980392156862,
+            "g": 0.9607843137254902,
+            "b": 0.9764705882352941,
+            "a": 0.5
+          },
+          "alias": null
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 0.05
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9024",
+      "name": "foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.03529411764705882,
+          "g": 0.03529411764705882,
+          "b": 0.043137254901960784,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.9803921568627451,
+          "g": 0.9725490196078431,
+          "b": 0.9725490196078431,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.03529411764705882,
+            "g": 0.03529411764705882,
+            "b": 0.043137254901960784,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/950"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9725490196078431,
+            "b": 0.9725490196078431,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Content/base"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9025",
+      "name": "sidebar/foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.24705882352941178,
+          "g": 0.24705882352941178,
+          "b": 0.27450980392156865,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.6470588235294118,
+          "g": 0.6745098039215687,
+          "b": 0.6627450980392157,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.24705882352941178,
+            "g": 0.24705882352941178,
+            "b": 0.27450980392156865,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/700"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.6470588235294118,
+            "g": 0.6745098039215687,
+            "b": 0.6627450980392157,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Content/muted"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9026",
+      "name": "sidebar/foreground-70",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.24705882352941178,
+          "g": 0.24705882352941178,
+          "b": 0.27450980392156865,
+          "a": 0.7
+        },
+        "900:1": {
+          "r": 0.6470588235294118,
+          "g": 0.6745098039215687,
+          "b": 0.6627450980392157,
+          "a": 0.7
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.24705882352941178,
+            "g": 0.24705882352941178,
+            "b": 0.27450980392156865,
+            "a": 0.7
+          },
+          "alias": null
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.6470588235294118,
+            "g": 0.6745098039215687,
+            "b": 0.6627450980392157,
+            "a": 0.7
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9027",
+      "name": "sidebar/primary",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.09411764705882353,
+          "g": 0.09411764705882353,
+          "b": 0.10588235294117647,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.09411764705882353,
+            "g": 0.09411764705882353,
+            "b": 0.10588235294117647,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/900"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/500"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9028",
+      "name": "sidebar/primary-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9803921568627451,
+          "g": 0.9803921568627451,
+          "b": 0.9803921568627451,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9803921568627451,
+            "b": 0.9803921568627451,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/50"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Canvas/black"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9029",
+      "name": "sidebar/accent",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9568627450980393,
+          "g": 0.9568627450980393,
+          "b": 0.9607843137254902,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 0.1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9568627450980393,
+            "g": 0.9568627450980393,
+            "b": 0.9607843137254902,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/100"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 0.1
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9030",
+      "name": "sidebar/accent-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.09411764705882353,
+          "g": 0.09411764705882353,
+          "b": 0.10588235294117647,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.09411764705882353,
+            "g": 0.09411764705882353,
+            "b": 0.10588235294117647,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/900"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/500"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9031",
+      "name": "sidebar/border",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.8941176470588236,
+          "g": 0.8941176470588236,
+          "b": 0.9058823529411765,
+          "a": 1
+        },
+        "900:1": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.12
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.8941176470588236,
+            "g": 0.8941176470588236,
+            "b": 0.9058823529411765,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/200"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 0.12
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9032",
+      "name": "sidebar/ring",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.6313725490196078,
+          "g": 0.6313725490196078,
+          "b": 0.6666666666666666,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.6313725490196078,
+            "g": 0.6313725490196078,
+            "b": 0.6666666666666666,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/400"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/500"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9033",
+      "name": "muted",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9568627450980393,
+          "g": 0.9568627450980393,
+          "b": 0.9607843137254902,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.6823529411764706,
+          "g": 0.6823529411764706,
+          "b": 0.6823529411764706,
+          "a": 0.05
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9568627450980393,
+            "g": 0.9568627450980393,
+            "b": 0.9607843137254902,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/100"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.6823529411764706,
+            "g": 0.6823529411764706,
+            "b": 0.6823529411764706,
+            "a": 0.05
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9034",
+      "name": "muted-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.44313725490196076,
+          "g": 0.44313725490196076,
+          "b": 0.47843137254901963,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.9803921568627451,
+          "g": 0.9725490196078431,
+          "b": 0.9725490196078431,
+          "a": 0.6
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.44313725490196076,
+            "g": 0.44313725490196076,
+            "b": 0.47843137254901963,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/500"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9725490196078431,
+            "b": 0.9725490196078431,
+            "a": 0.6
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9035",
+      "name": "card",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.6823529411764706,
+          "g": 0.6823529411764706,
+          "b": 0.6823529411764706,
+          "a": 0.05
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "base/white"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.6823529411764706,
+            "g": 0.6823529411764706,
+            "b": 0.6823529411764706,
+            "a": 0.05
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9036",
+      "name": "card-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.03529411764705882,
+          "g": 0.03529411764705882,
+          "b": 0.043137254901960784,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.9803921568627451,
+          "g": 0.9725490196078431,
+          "b": 0.9725490196078431,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.03529411764705882,
+            "g": 0.03529411764705882,
+            "b": 0.043137254901960784,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/950"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9725490196078431,
+            "b": 0.9725490196078431,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Content/base"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9037",
+      "name": "popover",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.7
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "base/white"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.7
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9038",
+      "name": "popover-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.03529411764705882,
+          "g": 0.03529411764705882,
+          "b": 0.043137254901960784,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.9803921568627451,
+          "g": 0.9725490196078431,
+          "b": 0.9725490196078431,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.03529411764705882,
+            "g": 0.03529411764705882,
+            "b": 0.043137254901960784,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/950"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9725490196078431,
+            "b": 0.9725490196078431,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Content/base"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9039",
+      "name": "border",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.8941176470588236,
+          "g": 0.8941176470588236,
+          "b": 0.9058823529411765,
+          "a": 1
+        },
+        "900:1": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.12
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.8941176470588236,
+            "g": 0.8941176470588236,
+            "b": 0.9058823529411765,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/200"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 0.12
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9040",
+      "name": "border-muted-40",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9450980392156862,
+          "g": 0.9607843137254902,
+          "b": 0.9764705882352941,
+          "a": 0.4
+        },
+        "900:1": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.04
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9450980392156862,
+            "g": 0.9607843137254902,
+            "b": 0.9764705882352941,
+            "a": 0.4
+          },
+          "alias": null
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 0.04
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9041",
+      "name": "border-destructive-50",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.996078431372549,
+          "g": 0.792156862745098,
+          "b": 0.792156862745098,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.8509803921568627,
+          "g": 0.3254901960784314,
+          "b": 0.29411764705882354,
+          "a": 0.5
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.996078431372549,
+            "g": 0.792156862745098,
+            "b": 0.792156862745098,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "red/200"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.8509803921568627,
+            "g": 0.3254901960784314,
+            "b": 0.29411764705882354,
+            "a": 0.5
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9042",
+      "name": "input",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.8941176470588236,
+          "g": 0.8941176470588236,
+          "b": 0.9058823529411765,
+          "a": 1
+        },
+        "900:1": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.12
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.8941176470588236,
+            "g": 0.8941176470588236,
+            "b": 0.9058823529411765,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/200"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 0.12
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9043",
+      "name": "primary",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.09411764705882353,
+          "g": 0.09411764705882353,
+          "b": 0.10588235294117647,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.09411764705882353,
+            "g": 0.09411764705882353,
+            "b": 0.10588235294117647,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/900"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/500"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9044",
+      "name": "primary-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9803921568627451,
+          "g": 0.9803921568627451,
+          "b": 0.9803921568627451,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9803921568627451,
+            "b": 0.9803921568627451,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/50"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Canvas/black"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9045",
+      "name": "hover:primary",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.15294117647058825,
+          "g": 0.15294117647058825,
+          "b": 0.16470588235294117,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.48627450980392156,
+          "g": 0.9490196078431372,
+          "b": 0.6509803921568628,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.15294117647058825,
+            "g": 0.15294117647058825,
+            "b": 0.16470588235294117,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/800"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.48627450980392156,
+            "g": 0.9490196078431372,
+            "b": 0.6509803921568628,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/400"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9046",
+      "name": "secondary",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9450980392156862,
+          "g": 0.9607843137254902,
+          "b": 0.9764705882352941,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.9803921568627451,
+          "g": 0.9725490196078431,
+          "b": 0.9725490196078431,
+          "a": 0.08
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9450980392156862,
+            "g": 0.9607843137254902,
+            "b": 0.9764705882352941,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "slate/100"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9725490196078431,
+            "b": 0.9725490196078431,
+            "a": 0.08
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9047",
+      "name": "secondary-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.09411764705882353,
+          "g": 0.09411764705882353,
+          "b": 0.10588235294117647,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.9803921568627451,
+          "g": 0.9725490196078431,
+          "b": 0.9725490196078431,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.09411764705882353,
+            "g": 0.09411764705882353,
+            "b": 0.10588235294117647,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/900"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9725490196078431,
+            "b": 0.9725490196078431,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Content/base"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9048",
+      "name": "hover:secondary",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.8941176470588236,
+          "g": 0.8941176470588236,
+          "b": 0.9058823529411765,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.9803921568627451,
+          "g": 0.9725490196078431,
+          "b": 0.9725490196078431,
+          "a": 0.16
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.8941176470588236,
+            "g": 0.8941176470588236,
+            "b": 0.9058823529411765,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/200"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9725490196078431,
+            "b": 0.9725490196078431,
+            "a": 0.16
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9049",
+      "name": "accent",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9568627450980393,
+          "g": 0.9568627450980393,
+          "b": 0.9607843137254902,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 0.1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9568627450980393,
+            "g": 0.9568627450980393,
+            "b": 0.9607843137254902,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/100"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 0.1
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9050",
+      "name": "accent-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.09411764705882353,
+          "g": 0.09411764705882353,
+          "b": 0.10588235294117647,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.09411764705882353,
+            "g": 0.09411764705882353,
+            "b": 0.10588235294117647,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/900"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/500"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9051",
+      "name": "destructive",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.8627450980392157,
+          "g": 0.14901960784313725,
+          "b": 0.14901960784313725,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.8509803921568627,
+          "g": 0.3254901960784314,
+          "b": 0.29411764705882354,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.8627450980392157,
+            "g": 0.14901960784313725,
+            "b": 0.14901960784313725,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "red/600"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.8509803921568627,
+            "g": 0.3254901960784314,
+            "b": 0.29411764705882354,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Loss/500"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9052",
+      "name": "destructive-foreground",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9803921568627451,
+          "g": 0.9803921568627451,
+          "b": 0.9803921568627451,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9803921568627451,
+            "g": 0.9803921568627451,
+            "b": 0.9803921568627451,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/50"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Canvas/black"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9053",
+      "name": "hover:destructive",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.9372549019607843,
+          "g": 0.26666666666666666,
+          "b": 0.26666666666666666,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.8941176470588236,
+          "g": 0.45098039215686275,
+          "b": 0.4235294117647059,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.9372549019607843,
+            "g": 0.26666666666666666,
+            "b": 0.26666666666666666,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "red/500"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.8941176470588236,
+            "g": 0.45098039215686275,
+            "b": 0.4235294117647059,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Loss/400"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9054",
+      "name": "bg-destructive-10",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.8627450980392157,
+          "g": 0.14901960784313725,
+          "b": 0.14901960784313725,
+          "a": 0.1
+        },
+        "900:1": {
+          "r": 0.8509803921568627,
+          "g": 0.3254901960784314,
+          "b": 0.29411764705882354,
+          "a": 0.1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.8627450980392157,
+            "g": 0.14901960784313725,
+            "b": 0.14901960784313725,
+            "a": 0.1
+          },
+          "alias": null
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.8509803921568627,
+            "g": 0.3254901960784314,
+            "b": 0.29411764705882354,
+            "a": 0.1
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9055",
+      "name": "hover:destructive-20",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.8627450980392157,
+          "g": 0.14901960784313725,
+          "b": 0.14901960784313725,
+          "a": 0.2
+        },
+        "900:1": {
+          "r": 0.8509803921568627,
+          "g": 0.3254901960784314,
+          "b": 0.29411764705882354,
+          "a": 0.2
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.8627450980392157,
+            "g": 0.14901960784313725,
+            "b": 0.14901960784313725,
+            "a": 0.2
+          },
+          "alias": null
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.8509803921568627,
+            "g": 0.3254901960784314,
+            "b": 0.29411764705882354,
+            "a": 0.2
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9056",
+      "name": "ring",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.44313725490196076,
+          "g": 0.44313725490196076,
+          "b": 0.47843137254901963,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.44313725490196076,
+            "g": 0.44313725490196076,
+            "b": 0.47843137254901963,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "zinc/500"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/500"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9057",
+      "name": "success",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.08627450980392157,
+          "g": 0.6392156862745098,
+          "b": 0.2901960784313726,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.3568627450980392,
+          "g": 0.9921568627450981,
+          "b": 0.5450980392156862,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.08627450980392157,
+            "g": 0.6392156862745098,
+            "b": 0.2901960784313726,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "green/600"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.3568627450980392,
+            "g": 0.9921568627450981,
+            "b": 0.5450980392156862,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/500"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9058",
+      "name": "hover:succes",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.08235294117647059,
+          "g": 0.5019607843137255,
+          "b": 0.23921568627450981,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.48627450980392156,
+          "g": 0.9490196078431372,
+          "b": 0.6509803921568628,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.08235294117647059,
+            "g": 0.5019607843137255,
+            "b": 0.23921568627450981,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "green/700"
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.48627450980392156,
+            "g": 0.9490196078431372,
+            "b": 0.6509803921568628,
+            "a": 1
+          },
+          "alias": "VariableID:alias",
+          "aliasName": "Green/400"
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:900:9059",
+      "name": "neon-green",
+      "description": "",
+      "type": "COLOR",
+      "valuesByMode": {
+        "900:0": {
+          "r": 0.6784313725490196,
+          "g": 0.9803921568627451,
+          "b": 0.11372549019607843,
+          "a": 1
+        },
+        "900:1": {
+          "r": 0.6784313725490196,
+          "g": 0.9803921568627451,
+          "b": 0.11372549019607843,
+          "a": 1
+        }
+      },
+      "resolvedValuesByMode": {
+        "900:0": {
+          "resolvedValue": {
+            "r": 0.6784313725490196,
+            "g": 0.9803921568627451,
+            "b": 0.11372549019607843,
+            "a": 1
+          },
+          "alias": null
+        },
+        "900:1": {
+          "resolvedValue": {
+            "r": 0.6784313725490196,
+            "g": 0.9803921568627451,
+            "b": 0.11372549019607843,
+            "a": 1
+          },
+          "alias": null
+        }
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@noduf/unalyze-ui — visual review</title>
+    <style>
+      /*
+       * The preview's OWN styles, deliberately unlayered and unprefixed.
+       *
+       * This page is a stand-in for the consuming application, so it is also a live test of the
+       * override story: none of this is namespaced, and none of it collides with the library.
+       */
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+        background: var(--un-background);
+        color: var(--un-foreground);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

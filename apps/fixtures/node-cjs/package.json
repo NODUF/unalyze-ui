@@ -1,0 +1,12 @@
+{
+  "name": "fixture-node-cjs",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "verify": "node index.cjs"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

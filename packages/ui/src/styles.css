@@ -1,0 +1,425 @@
+/**
+ * The library stylesheet. Compiled to `dist/styles.css` and shipped precompiled, so the
+ * consuming application needs no Tailwind, no config and no content paths.
+ *
+ * Three deliberate departures from a normal Tailwind setup, each because this file lands in a
+ * codebase we do not control:
+ *
+ * 1. **No preflight.** `@import "tailwindcss"` would pull in Tailwind's global reset and
+ *    restyle the consumer's entire page — every heading, list and form control they own. We
+ *    import only the theme and the utilities.
+ *
+ * 2. **Our own layer names.** Importing utilities into a layer called `utilities` would merge
+ *    with the consumer's own Tailwind layer of the same name and make override behaviour depend
+ *    on parse order. `unalyze-utilities` cannot collide.
+ *
+ * 3. **Two separate namespaces: `u:` for classes, `--un-*` for tokens.**
+ *
+ *    This looks like an inconsistency and is the opposite. Tailwind derives its theme variable
+ *    names from the class prefix, so `prefix(un)` renamed Tailwind's own `--text-sm` and
+ *    `--radius-sm` to `--un-text-sm` and `--un-radius-sm` — colliding head-on with our tokens of
+ *    exactly those names, in a higher cascade layer. The emitted CSS contained
+ *    `--un-text-sm: var(--un-text-sm)`: a self-reference, which CSS treats as invalid, which
+ *    silently removed the entire type and radius scale. The build was green throughout.
+ *
+ *    So the class prefix is `u` and the token namespace stays `--un-*`. Nothing overlaps, and
+ *    `--un-*` remains the documented public contract, matching the consuming app's `.un-pill`.
+ *    `verify-package.test.ts` asserts no custom property references itself.
+ *
+ * 4. **`theme(reference)` on both imports.** Tailwind then resolves theme values at build time
+ *    and emits no `--u-*` variables at all. The only custom properties that reach the consumer's
+ *    page are our `--un-*` tokens.
+ */
+
+@layer unalyze-base, unalyze-components, unalyze-utilities;
+
+/* Design tokens — the `--un-*` custom properties. Already wrapped in `unalyze-base`. */
+@import '@noduf/unalyze-tokens/tokens.css';
+
+/* Tailwind's theme scaffolding, without preflight. */
+@import 'tailwindcss/theme.css' layer(unalyze-utilities) prefix(u) theme(reference);
+@import 'tailwindcss/utilities.css' layer(unalyze-utilities) prefix(u);
+
+/* Bind Tailwind's theme namespaces to our tokens. Generated — see packages/tokens/scripts/emit.ts. */
+@import '../../tokens/generated/theme.css';
+
+/* Only our own source is scanned. The consumer's markup is irrelevant: we ship what we use. */
+@source './**/*.{ts,tsx}';
+
+/* ==================================================================
+ * Component base classes
+ *
+ * Every component root carries a plain `un-<name>` class alongside its utilities. That class is
+ * part of the public contract: it is the documented, semver-protected hook the consuming team
+ * targets when they need to override something, so they never have to depend on a generated
+ * utility name. It intentionally carries almost no styling of its own.
+ * ================================================================== */
+
+@layer unalyze-components {
+  /**
+   * Neutralise the browser's own control styling — on OUR elements only.
+   *
+   * The library ships no preflight on purpose: resetting the consuming application's document is
+   * not ours to do. But that left every `<button>`, `<input>` and `<select>` the library renders
+   * still wearing the user agent's defaults, and on a black canvas those are loud — a 1 px
+   * `outset ButtonBorder` reads as a grey ring around every tab and control, and `ButtonFace`
+   * paints a light grey slab behind any button that does not set its own background.
+   *
+   * That is what made the nav tabs look bordered and the inactive tab look filled. Not a
+   * component bug: a missing reset that a preflight would normally have handled, and that a
+   * library which correctly declines to ship one has to handle itself.
+   *
+   * `[data-un-component]` is the hook because every styled component root carries it and the
+   * conformance suite enforces that. Element selectors narrow it to real form controls, so a
+   * `Surface` or a `Text` is never stripped of padding it was given.
+   *
+   * This sits in `unalyze-components`, below `unalyze-utilities`, so every `u:` utility a
+   * variant applies still wins.
+   */
+  button[data-un-component],
+  input[data-un-component],
+  textarea[data-un-component],
+  select[data-un-component] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border-style: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+  }
+
+  /* Chromium draws its own inner focus ring and spin buttons on some inputs. */
+  input[data-un-component]::-webkit-outer-spin-button,
+  input[data-un-component]::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  input[data-un-component]::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+  /**
+   * Focus. Never removed, only replaced — WCAG 2.4.7 / 2.4.11.
+   *
+   * Scoped to our own components rather than applied globally: a bare `:focus-visible` rule
+   * would restyle every focusable element on the consumer's page.
+   */
+  [data-un-component]:focus-visible {
+    outline: var(--un-focus-ring-width) solid var(--un-ring);
+    outline-offset: var(--un-focus-ring-offset);
+  }
+
+  [data-un-component]:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /**
+   * Numerals must never shift width in a financial interface: a column of P&L values that
+   * jitters as digits change is unreadable. Opt-in via `data-numeric`, and automatic inside
+   * anything we render as a table.
+   */
+  [data-numeric],
+  .un-numeric {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+}
+
+/* ==================================================================
+ * Reduced motion
+ *
+ * A backstop, scoped to our components so it cannot disable animation the consumer owns.
+ * `data-un-allow-motion` is a narrow exemption for ESSENTIAL feedback only — currently just the
+ * button spinner, where a frozen indicator reads as a hung interface. WCAG 2.3.3 targets
+ * non-essential animation, and every exempt indicator also announces its state (`aria-busy`).
+ * ================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-un-component]:not([data-un-allow-motion]),
+  [data-un-component]:not([data-un-allow-motion]) *:not([data-un-allow-motion]) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer unalyze-components {
+  /**
+   * Named rather than composed from a Tailwind `animate-*` utility so the keyframe ships with
+   * the stylesheet no matter what the consumer's Tailwind does — or whether they have one.
+   */
+  .un-spinner {
+    animation: un-spin 0.9s linear infinite;
+  }
+
+  /**
+   * The skeleton shimmer.
+   *
+   * A moving highlight rather than a pulsing opacity: a pulse reads as "this is broken and
+   * flashing", a sweep reads as "this is filling in". Exempt from the reduced-motion backstop is
+   * NOT granted here — unlike the spinner, a still skeleton communicates perfectly well.
+   */
+  .un-skeleton {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .un-skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--un-foreground) 6%, transparent),
+      transparent
+    );
+    animation: un-shimmer 1.4s var(--un-ease-standard) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .un-skeleton::after {
+      animation: none;
+    }
+  }
+
+  /**
+   * A second fill stacked over the surface's own background colour — the way the design tints
+   * each chart card with the hue of the series it plots.
+   *
+   * `background-image` layers over `background-color` rather than replacing it, so this composes
+   * with whatever `level` already painted. That is exactly how the design builds it: those cards
+   * carry two fills, a neutral veil with a coloured one on top.
+   */
+  /*
+   * There is no `.un-tint` class. The tint is one LAYER of the glass material's own
+   * `background-image` below, and the variant supplies it by setting `--un-tint`.
+   *
+   * It was a separate class setting its own `background-image`, which put two declarations of a
+   * single property in one cascade layer — so whichever came second in the file silently erased
+   * the other, and a tinted card lost either its veil or its tint depending on source order.
+   */
+
+  /* ================================================================
+   * The glass panel material
+   *
+   * One material, two members. A CARD sits on the page and needs only the veil; a FLOATING PANEL
+   * — a menu, a select, a dialog — sits over arbitrary content and adds a black backing beneath
+   * the same veil so its text stays readable over a chart.
+   *
+   * Both were read off the design. The modal's panel carries `#000000 @0.7` and `#AEAEAE @0.05`
+   * as two stacked fills, the gradient rim, `BACKGROUND_BLUR 20`, and the same paired inner
+   * shadows a card uses. It is not a different surface from a card — it is a card with a backing.
+   *
+   * Written as CSS classes rather than as utility strings because these four properties always
+   * travel together, and a component that applies three of the four is a component that quietly
+   * stops being glass.
+   * ================================================================ */
+
+  /*
+   * Shared by both: the rim's companion — the paired inner light, plus the drop shadow that
+   * seats the surface.
+   *
+   * One declaration, because `box-shadow` is a single property: a component that set its
+   * elevation separately would silently erase the inner pair.
+   */
+  .un-glass-panel,
+  .un-glass-floating {
+    box-shadow: var(--un-elevation-inset), var(--un-elevation-overlay);
+  }
+
+  /**
+   * A CARD. Sits on the page canvas, so it can be translucent: the neutral veil, plus an optional
+   * series tint stacked over it, with a backdrop blur that picks up the ambient glow behind the
+   * layout.
+   *
+   * Two fill layers in ONE `background-image` declaration — the property is singular, so they
+   * cannot be set from two places. That was the bug: as separate declarations in one cascade
+   * layer, the later silently erased the earlier and a tinted card lost either its veil or its
+   * tint depending on source order.
+   */
+  .un-glass-panel {
+    background-color: transparent;
+    background-image:
+      linear-gradient(var(--un-tint, transparent), var(--un-tint, transparent)),
+      linear-gradient(var(--un-card), var(--un-card));
+    backdrop-filter: blur(var(--un-glass-blur)) saturate(var(--un-glass-saturate, 100%));
+    -webkit-backdrop-filter: blur(var(--un-glass-blur)) saturate(var(--un-glass-saturate, 100%));
+  }
+
+  /**
+   * A FLOATING panel — dropdown, select menu, dialog, tooltip. Opaque, and deliberately so.
+   *
+   * It keeps the glass rim and the inner light, so it reads as the same material as a card. What
+   * it does not keep is translucency, because translucency over arbitrary content only works with
+   * a backdrop blur, and a blur here is not worth its price: a compositing layer per menu,
+   * repainted whenever anything behind it moves, and switched off entirely by some users.
+   *
+   * Those two go together or not at all — a translucent panel with the blur disabled is a chart
+   * showing through the text on top of it.
+   */
+  .un-glass-floating {
+    background-color: var(--un-surface-floating);
+    color: var(--un-popover-foreground);
+  }
+
+  /**
+   * The scrim. Darkens, and nothing else.
+   *
+   * The design blurs it too (`BACKGROUND_BLUR 8`), and that is dropped for the same reason the
+   * panel's blur is: it buys atmosphere at the cost of a full-viewport compositing layer that
+   * repaints on every scroll behind it. A scrim's job is to say "the page is not available", and
+   * 68 % black says that on its own.
+   *
+   * Restoring it is two lines here plus the `glass-blur-scrim` token, which is kept for that.
+   */
+}
+
+/* ==================================================================
+ * The glass rim — a gradient edge instead of a flat border
+ *
+ * A uniform 1 px stroke reads as a drawn outline. A gradient rim, brightest at the top lip and
+ * gone by the bottom, reads as light raking across a physical edge. That is what sells the
+ * material, and it is why 57 layers in the design carry it.
+ *
+ * ### Why a masked pseudo-element and not something simpler
+ *
+ * - `border-image` accepts a gradient but **ignores `border-radius` entirely**, so on a 32 px
+ *   card it paints a square frame. Unusable here.
+ * - The `background-clip: padding-box, border-box` double-layer trick respects the radius, but
+ *   its gradient layer sits UNDER the whole padding box. Our fills are translucent white-alpha,
+ *   so the gradient would show through and tint the entire card rather than only its edge.
+ * - What is left is a 1 px ring whose interior is masked out: two mask layers, one clipped to
+ *   `content-box`, composited with `exclude` so only the padding frame survives. It respects the
+ *   radius, works over any fill, and adds no layout box.
+ *
+ * `inset: 0` rather than `-1px`, and no border on the host: the ring then sits exactly at the
+ * element's own edge, which keeps it inside an `overflow: hidden` clip. Cards that clip their
+ * contents would otherwise shave a negatively-inset ring off.
+ *
+ * The host must be positioned. `Surface` and `Button` both carry `relative` in their base class
+ * for this reason — on a static host the ring would size itself to the nearest positioned
+ * ancestor instead of the element. `position` is deliberately NOT set here, because forcing it
+ * would break `sticky` chrome.
+ * ================================================================== */
+
+@utility glass-edge {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    padding: 1px;
+    /* Composed here rather than in the token, so substitution happens on THIS element and both
+       --un-edge-angle and --un-edge-stops stay overridable per surface. */
+    background: linear-gradient(var(--un-edge-angle), var(--un-edge-stops));
+    pointer-events: none;
+    /* Prefixed pair first for older WebKit, then the standard property. */
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+}
+
+/**
+ * Fallback for engines without mask compositing. A rim that fails to paint would leave the
+ * surface with no edge at all, so a flat hairline is restored instead.
+ */
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  /* `u\:`, not `un\:` — the class prefix is `u` and only the tokens are `--un-*`. */
+  .u\:glass-edge {
+    border: 1px solid var(--un-border);
+  }
+  .u\:glass-edge::before {
+    display: none;
+  }
+}
+
+@keyframes un-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes un-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* ==================================================================
+ * Overlay motion
+ *
+ * Driven by Radix's own `data-state` and `data-side`, so open and close are animated by the same
+ * component that already knows about them — no state duplicated into React.
+ *
+ * Hand-written rather than pulled from `tailwindcss-animate`: adding a dependency to a package
+ * that lands in someone else's bundle, for four keyframes, is not a trade worth making.
+ *
+ * `transform` and `opacity` only. The exit animation matters as much as the entrance — without
+ * it Radix unmounts the node instantly and a menu vanishes rather than closing.
+ * ================================================================== */
+
+@layer unalyze-components {
+  .un-overlay-anim[data-state='open'] {
+    animation: un-overlay-in var(--un-duration-fast) var(--un-ease-decelerate);
+  }
+  .un-overlay-anim[data-state='closed'] {
+    animation: un-overlay-out var(--un-duration-instant) var(--un-ease-accelerate);
+  }
+
+  /* Slides away from the trigger, so the panel appears to come out of the control. */
+  .un-overlay-anim[data-side='bottom'] { --un-overlay-from: -4px; }
+  .un-overlay-anim[data-side='top'] { --un-overlay-from: 4px; }
+  .un-overlay-anim[data-side='left'] { --un-overlay-from-x: 4px; }
+  .un-overlay-anim[data-side='right'] { --un-overlay-from-x: -4px; }
+
+  .un-scrim[data-state='open'] {
+    animation: un-fade-in var(--un-duration-fast) var(--un-ease-standard);
+  }
+  .un-scrim[data-state='closed'] {
+    animation: un-fade-out var(--un-duration-instant) var(--un-ease-standard);
+  }
+}
+
+@keyframes un-overlay-in {
+  from {
+    opacity: 0;
+    transform: translate(var(--un-overlay-from-x, 0), var(--un-overlay-from, 0)) scale(0.97);
+  }
+}
+
+@keyframes un-overlay-out {
+  to {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+@keyframes un-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes un-fade-out {
+  to {
+    opacity: 0;
+  }
+}

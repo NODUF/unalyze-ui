@@ -1,0 +1,1705 @@
+{
+  "container-2xl": {
+    "$type": "dimension",
+    "$value": "672px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-3xl": {
+    "$type": "dimension",
+    "$value": "768px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-4xl": {
+    "$type": "dimension",
+    "$value": "896px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-5xl": {
+    "$type": "dimension",
+    "$value": "1024px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-6xl": {
+    "$type": "dimension",
+    "$value": "1152px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-7xl": {
+    "$type": "dimension",
+    "$value": "1280px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-lg": {
+    "$type": "dimension",
+    "$value": "512px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-md": {
+    "$type": "dimension",
+    "$value": "448px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-screen-2xl": {
+    "$type": "dimension",
+    "$value": "1536px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-screen-lg": {
+    "$type": "dimension",
+    "$value": "1024px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-screen-md": {
+    "$type": "dimension",
+    "$value": "768px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-screen-sm": {
+    "$type": "dimension",
+    "$value": "640px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-screen-xl": {
+    "$type": "dimension",
+    "$value": "1280px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-sm": {
+    "$type": "dimension",
+    "$value": "384px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-xl": {
+    "$type": "dimension",
+    "$value": "576px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "container-xs": {
+    "$type": "dimension",
+    "$value": "320px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "duration-base": {
+    "$type": "duration",
+    "$value": "220ms",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "duration-fast": {
+    "$type": "duration",
+    "$value": "140ms",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "duration-instant": {
+    "$type": "duration",
+    "$value": "80ms",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "duration-slow": {
+    "$type": "duration",
+    "$value": "360ms",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "ease-accelerate": {
+    "$type": "cubicBezier",
+    "$value": "cubic-bezier(0.3, 0, 1, 1)",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "ease-decelerate": {
+    "$type": "cubicBezier",
+    "$value": "cubic-bezier(0, 0, 0, 1)",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "ease-emphasized": {
+    "$type": "cubicBezier",
+    "$value": "cubic-bezier(0.2, 0, 0, 1.2)",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "ease-standard": {
+    "$type": "cubicBezier",
+    "$value": "cubic-bezier(0.2, 0, 0, 1)",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "focus-ring-offset": {
+    "$type": "dimension",
+    "$value": "2px",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "focus-ring-width": {
+    "$type": "dimension",
+    "$value": "2px",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "font-display": {
+    "$type": "fontFamily",
+    "$value": "Nohemi, var(--un-font-sans)",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "font-mono": {
+    "$type": "fontFamily",
+    "$value": "SF Mono, ui-monospace, SFMono-Regular, Menlo, monospace",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "font-sans": {
+    "$type": "fontFamily",
+    "$value": "Nohemi, ui-sans-serif, system-ui, -apple-system, sans-serif",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "font-serif": {
+    "$type": "fontFamily",
+    "$value": "Georgia, ui-serif, Georgia, serif",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "glass-blur": {
+    "$type": "dimension",
+    "$value": "20px",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "glass-blur-scrim": {
+    "$type": "dimension",
+    "$value": "8px",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "icon-lg": {
+    "$type": "dimension",
+    "$value": "24px",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "icon-md": {
+    "$type": "dimension",
+    "$value": "20px",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "icon-sm": {
+    "$type": "dimension",
+    "$value": "16px",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "leading-10": {
+    "$type": "dimension",
+    "$value": "40px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-15": {
+    "$type": "dimension",
+    "$value": "15px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-22": {
+    "$type": "dimension",
+    "$value": "22px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-3": {
+    "$type": "dimension",
+    "$value": "12px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-4": {
+    "$type": "dimension",
+    "$value": "16px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-5": {
+    "$type": "dimension",
+    "$value": "20px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-6": {
+    "$type": "dimension",
+    "$value": "24px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-7": {
+    "$type": "dimension",
+    "$value": "28px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-8": {
+    "$type": "dimension",
+    "$value": "32px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "leading-9": {
+    "$type": "dimension",
+    "$value": "36px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "opacity-disabled": {
+    "$type": "other",
+    "$value": "0.5",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "opacity-hover": {
+    "$type": "other",
+    "$value": "0.8",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "$value": "32px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "radius-md": {
+    "$type": "dimension",
+    "$value": "12px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "radius-sm": {
+    "$type": "dimension",
+    "$value": "8px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-0": {
+    "$type": "dimension",
+    "$value": "0px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-0-5": {
+    "$type": "dimension",
+    "$value": "2px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-1": {
+    "$type": "dimension",
+    "$value": "4px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-1-5": {
+    "$type": "dimension",
+    "$value": "6px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-10": {
+    "$type": "dimension",
+    "$value": "40px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-11": {
+    "$type": "dimension",
+    "$value": "44px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-12": {
+    "$type": "dimension",
+    "$value": "48px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-14": {
+    "$type": "dimension",
+    "$value": "56px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-16": {
+    "$type": "dimension",
+    "$value": "64px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-18": {
+    "$type": "dimension",
+    "$value": "72px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-2": {
+    "$type": "dimension",
+    "$value": "8px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-2-5": {
+    "$type": "dimension",
+    "$value": "10px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-20": {
+    "$type": "dimension",
+    "$value": "80px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-24": {
+    "$type": "dimension",
+    "$value": "96px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-28": {
+    "$type": "dimension",
+    "$value": "112px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-3": {
+    "$type": "dimension",
+    "$value": "12px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-3-5": {
+    "$type": "dimension",
+    "$value": "14px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-32": {
+    "$type": "dimension",
+    "$value": "128px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-4": {
+    "$type": "dimension",
+    "$value": "16px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-5": {
+    "$type": "dimension",
+    "$value": "20px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-6": {
+    "$type": "dimension",
+    "$value": "24px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-64": {
+    "$type": "dimension",
+    "$value": "256px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-7": {
+    "$type": "dimension",
+    "$value": "28px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-8": {
+    "$type": "dimension",
+    "$value": "32px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-9": {
+    "$type": "dimension",
+    "$value": "36px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "space-px": {
+    "$type": "dimension",
+    "$value": "1px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-10": {
+    "$type": "dimension",
+    "$value": "10px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-11": {
+    "$type": "dimension",
+    "$value": "11px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-13": {
+    "$type": "dimension",
+    "$value": "13px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-15": {
+    "$type": "dimension",
+    "$value": "15px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-21": {
+    "$type": "dimension",
+    "$value": "21px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-28": {
+    "$type": "dimension",
+    "$value": "28px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-2xl": {
+    "$type": "dimension",
+    "$value": "24px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-3xl": {
+    "$type": "dimension",
+    "$value": "30px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-4xl": {
+    "$type": "dimension",
+    "$value": "36px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-5xl": {
+    "$type": "dimension",
+    "$value": "48px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-6xl": {
+    "$type": "dimension",
+    "$value": "60px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-7xl": {
+    "$type": "dimension",
+    "$value": "72px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-8xl": {
+    "$type": "dimension",
+    "$value": "96px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-9xl": {
+    "$type": "dimension",
+    "$value": "128px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-base": {
+    "$type": "dimension",
+    "$value": "16px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-lg": {
+    "$type": "dimension",
+    "$value": "18px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-sm": {
+    "$type": "dimension",
+    "$value": "14px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-xl": {
+    "$type": "dimension",
+    "$value": "20px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "text-xs": {
+    "$type": "dimension",
+    "$value": "12px",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "touch-target-min": {
+    "$type": "dimension",
+    "$value": "44px",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "weight-black": {
+    "$type": "fontWeight",
+    "$value": "900",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "weight-bold": {
+    "$type": "fontWeight",
+    "$value": "700",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "weight-extrabold": {
+    "$type": "fontWeight",
+    "$value": "800",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "weight-extralight": {
+    "$type": "fontWeight",
+    "$value": "200",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "weight-light": {
+    "$type": "fontWeight",
+    "$value": "300",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "weight-medium": {
+    "$type": "fontWeight",
+    "$value": "500",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "weight-normal": {
+    "$type": "fontWeight",
+    "$value": "400",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "weight-semibold": {
+    "$type": "fontWeight",
+    "$value": "600",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "weight-thin": {
+    "$type": "fontWeight",
+    "$value": "100",
+    "$extensions": {
+      "com.unalyze.origin": "figma"
+    }
+  },
+  "z-base": {
+    "$type": "other",
+    "$value": "0",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "z-drawer": {
+    "$type": "other",
+    "$value": "200",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "z-modal": {
+    "$type": "other",
+    "$value": "400",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "z-overlay": {
+    "$type": "other",
+    "$value": "300",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "z-popover": {
+    "$type": "other",
+    "$value": "500",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "z-sticky": {
+    "$type": "other",
+    "$value": "100",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "z-toast": {
+    "$type": "other",
+    "$value": "600",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "z-tooltip": {
+    "$type": "other",
+    "$value": "700",
+    "$extensions": {
+      "com.unalyze.origin": "code"
+    }
+  },
+  "accent": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0.1)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "accent-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#5bfd8b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/500"
+      }
+    }
+  },
+  "alert": {
+    "$type": "color",
+    "$value": {
+      "dark": "#ff5850"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "background": {
+    "$type": "color",
+    "$value": {
+      "dark": "#000000"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Canvas/black"
+      }
+    }
+  },
+  "bg-accent-50": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0.05)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "bg-destructive-10": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(217 83 75 / 0.1)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "bg-muted-40": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(174 174 174 / 0.04)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "bg-muted-50": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(174 174 174 / 0.05)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "border": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(255 255 255 / 0.12)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "border-destructive-50": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(217 83 75 / 0.5)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "border-muted-40": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(255 255 255 / 0.04)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "card": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(174 174 174 / 0.05)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "card-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#faf8f8"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Content/base"
+      }
+    }
+  },
+  "control": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(174 174 174 / 0.1)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "control-hover": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(174 174 174 / 0.16)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "destructive": {
+    "$type": "color",
+    "$value": {
+      "dark": "#d9534b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Loss/500"
+      }
+    }
+  },
+  "destructive-20-hover": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(217 83 75 / 0.2)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "destructive-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#000000"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Canvas/black"
+      }
+    }
+  },
+  "destructive-hover": {
+    "$type": "color",
+    "$value": {
+      "dark": "#e4736c"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Loss/400"
+      }
+    }
+  },
+  "edge-angle": {
+    "$type": "other",
+    "$value": {
+      "dark": "180deg"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "edge-stops": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(255 255 255 / 0.05), rgb(255 255 255 / 0)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "edge-stops-accent": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0.28), rgb(91 253 139 / 0)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "edge-stops-error": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(217 83 75 / 0.55), rgb(217 83 75 / 0.06)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "edge-stops-strong": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(255 255 255 / 0.10), rgb(255 255 255 / 0)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "elevation-flat": {
+    "$type": "shadow",
+    "$value": {
+      "dark": "0 1px 2px 0 rgb(0 0 0 / 0.40)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "elevation-inset": {
+    "$type": "shadow",
+    "$value": {
+      "dark": "inset 8px 8px 20px rgb(255 255 255 / 0.02), inset -8px -8px 20px rgb(255 255 255 / 0.02)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "elevation-overlay": {
+    "$type": "shadow",
+    "$value": {
+      "dark": "inset 0 1px 0 0 rgb(255 255 255 / 0.08), 0 12px 28px -6px rgb(0 0 0 / 0.60)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "elevation-raised": {
+    "$type": "shadow",
+    "$value": {
+      "dark": "inset 0 1px 0 0 rgb(255 255 255 / 0.06), 0 2px 6px -1px rgb(0 0 0 / 0.50)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "emphasis-wash": {
+    "$type": "other",
+    "$value": {
+      "dark": "radial-gradient(120% 108% at 0% 0%, rgb(124 242 166 / 0.42) 0%, rgb(47 211 107 / 0.14) 55%, rgb(47 211 107 / 0) 100%)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "emphasis-wash-negative": {
+    "$type": "other",
+    "$value": {
+      "dark": "radial-gradient(120% 108% at 0% 0%, rgb(217 83 75 / 0.30) 0%, rgb(217 83 75 / 0) 62%)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#faf8f8"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Content/base"
+      }
+    }
+  },
+  "chart-1": {
+    "$type": "color",
+    "$value": {
+      "dark": "#3288ff"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-2": {
+    "$type": "color",
+    "$value": {
+      "dark": "#9c32ff"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-3": {
+    "$type": "color",
+    "$value": {
+      "dark": "#d9558f"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-4": {
+    "$type": "color",
+    "$value": {
+      "dark": "#bc74ff"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-5": {
+    "$type": "color",
+    "$value": {
+      "dark": "#22d3ee"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-6": {
+    "$type": "color",
+    "$value": {
+      "dark": "#fbbf24"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-area-from": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0.28)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-area-to": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-axis": {
+    "$type": "color",
+    "$value": {
+      "dark": "#8b938f"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-grid": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(250 248 248 / 0.08)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-zero-line": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(250 248 248 / 0.22)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "info": {
+    "$type": "color",
+    "$value": {
+      "dark": "#3288ff"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "input": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(255 255 255 / 0.12)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "muted": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(174 174 174 / 0.05)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "muted-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(250 248 248 / 0.6)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "negative": {
+    "$type": "color",
+    "$value": {
+      "dark": "#d9534b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "neon-green": {
+    "$type": "color",
+    "$value": {
+      "dark": "#adfa1d"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "neutral-value": {
+    "$type": "color",
+    "$value": {
+      "dark": "#a5aca9"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "overlay-scrim": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(0 0 0 / 0.68)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "popover": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(0 0 0 / 0.7)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "popover-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#faf8f8"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Content/base"
+      }
+    }
+  },
+  "positive": {
+    "$type": "color",
+    "$value": {
+      "dark": "#5bfd8b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "primary": {
+    "$type": "color",
+    "$value": {
+      "dark": "#5bfd8b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/500"
+      }
+    }
+  },
+  "primary-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#000000"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Canvas/black"
+      }
+    }
+  },
+  "primary-hover": {
+    "$type": "color",
+    "$value": {
+      "dark": "#7cf2a6"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/400"
+      }
+    }
+  },
+  "ring": {
+    "$type": "color",
+    "$value": {
+      "dark": "#5bfd8b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/500"
+      }
+    }
+  },
+  "secondary": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(250 248 248 / 0.08)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "secondary-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#faf8f8"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Content/base"
+      }
+    }
+  },
+  "secondary-hover": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(250 248 248 / 0.16)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "sidebar-accent": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0.1)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "sidebar-accent-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#5bfd8b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/500"
+      }
+    }
+  },
+  "sidebar-background": {
+    "$type": "color",
+    "$value": {
+      "dark": "#000000"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Canvas/black"
+      }
+    }
+  },
+  "sidebar-border": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(255 255 255 / 0.12)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "sidebar-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#a5aca9"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Content/muted"
+      }
+    }
+  },
+  "sidebar-foreground-70": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(165 172 169 / 0.7)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "sidebar-primary": {
+    "$type": "color",
+    "$value": {
+      "dark": "#5bfd8b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/500"
+      }
+    }
+  },
+  "sidebar-primary-foreground": {
+    "$type": "color",
+    "$value": {
+      "dark": "#000000"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Canvas/black"
+      }
+    }
+  },
+  "sidebar-ring": {
+    "$type": "color",
+    "$value": {
+      "dark": "#5bfd8b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/500"
+      }
+    }
+  },
+  "success": {
+    "$type": "color",
+    "$value": {
+      "dark": "#5bfd8b"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/500"
+      }
+    }
+  },
+  "success-hover": {
+    "$type": "color",
+    "$value": {
+      "dark": "#7cf2a6"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "figma",
+      "com.unalyze.via": {
+        "dark": "Green/400"
+      }
+    }
+  },
+  "surface-floating": {
+    "$type": "color",
+    "$value": {
+      "dark": "#0a0a0a"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "tint-brand": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0.05)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "tint-chart": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(156 50 255 / 0.05)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "tint-info": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(50 136 255 / 0.05)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "warning": {
+    "$type": "color",
+    "$value": {
+      "dark": "#e6b800"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "generatedFrom": "figma/exports",
+  "neutral": "slate",
+  "themes": [
+    "dark"
+  ],
+  "counts": {
+    "palette": 244,
+    "brand": 19,
+    "scales": 65,
+    "type": 42,
+    "contract": 5,
+    "semanticPerTheme": 41
+  },
+  "renamed": [
+    {
+      "collection": "shadcn/ui",
+      "from": "hover:succes",
+      "to": "success-hover"
+    }
+  ],
+  "unmapped": []
+}

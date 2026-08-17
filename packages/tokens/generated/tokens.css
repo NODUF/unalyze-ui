@@ -1,0 +1,212 @@
+/**
+ * GENERATED FILE — do not edit.
+ *
+ * Source: figma/exports/*.json → packages/tokens/src/semantic.ts
+ * Regenerate: pnpm tokens
+ */
+
+@layer unalyze-base, unalyze-components;
+
+@layer unalyze-base {
+  :root {
+    --un-container-2xl: 672px;
+    --un-container-3xl: 768px;
+    --un-container-4xl: 896px;
+    --un-container-5xl: 1024px;
+    --un-container-6xl: 1152px;
+    --un-container-7xl: 1280px;
+    --un-container-lg: 512px;
+    --un-container-md: 448px;
+    --un-container-screen-2xl: 1536px;
+    --un-container-screen-lg: 1024px;
+    --un-container-screen-md: 768px;
+    --un-container-screen-sm: 640px;
+    --un-container-screen-xl: 1280px;
+    --un-container-sm: 384px;
+    --un-container-xl: 576px;
+    --un-container-xs: 320px;
+    --un-duration-base: 220ms;
+    --un-duration-fast: 140ms;
+    --un-duration-instant: 80ms;
+    --un-duration-slow: 360ms;
+    --un-ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+    --un-ease-decelerate: cubic-bezier(0, 0, 0, 1);
+    --un-ease-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+    --un-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --un-focus-ring-offset: 2px;
+    --un-focus-ring-width: 2px;
+    --un-font-display: Nohemi, var(--un-font-sans);
+    --un-font-mono: SF Mono, ui-monospace, SFMono-Regular, Menlo, monospace;
+    --un-font-sans: Nohemi, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --un-font-serif: Georgia, ui-serif, Georgia, serif;
+    --un-glass-blur: 20px;
+    --un-glass-blur-scrim: 8px;
+    --un-icon-lg: 24px;
+    --un-icon-md: 20px;
+    --un-icon-sm: 16px;
+    --un-leading-10: 40px;
+    --un-leading-15: 15px;
+    --un-leading-22: 22px;
+    --un-leading-3: 12px;
+    --un-leading-4: 16px;
+    --un-leading-5: 20px;
+    --un-leading-6: 24px;
+    --un-leading-7: 28px;
+    --un-leading-8: 32px;
+    --un-leading-9: 36px;
+    --un-opacity-disabled: 0.5;
+    --un-opacity-hover: 0.8;
+    --un-radius: 32px;
+    --un-radius-md: 12px;
+    --un-radius-sm: 8px;
+    --un-space-0: 0px;
+    --un-space-0-5: 2px;
+    --un-space-1: 4px;
+    --un-space-1-5: 6px;
+    --un-space-10: 40px;
+    --un-space-11: 44px;
+    --un-space-12: 48px;
+    --un-space-14: 56px;
+    --un-space-16: 64px;
+    --un-space-18: 72px;
+    --un-space-2: 8px;
+    --un-space-2-5: 10px;
+    --un-space-20: 80px;
+    --un-space-24: 96px;
+    --un-space-28: 112px;
+    --un-space-3: 12px;
+    --un-space-3-5: 14px;
+    --un-space-32: 128px;
+    --un-space-4: 16px;
+    --un-space-5: 20px;
+    --un-space-6: 24px;
+    --un-space-64: 256px;
+    --un-space-7: 28px;
+    --un-space-8: 32px;
+    --un-space-9: 36px;
+    --un-space-px: 1px;
+    --un-text-10: 10px;
+    --un-text-11: 11px;
+    --un-text-13: 13px;
+    --un-text-15: 15px;
+    --un-text-21: 21px;
+    --un-text-28: 28px;
+    --un-text-2xl: 24px;
+    --un-text-3xl: 30px;
+    --un-text-4xl: 36px;
+    --un-text-5xl: 48px;
+    --un-text-6xl: 60px;
+    --un-text-7xl: 72px;
+    --un-text-8xl: 96px;
+    --un-text-9xl: 128px;
+    --un-text-base: 16px;
+    --un-text-lg: 18px;
+    --un-text-sm: 14px;
+    --un-text-xl: 20px;
+    --un-text-xs: 12px;
+    --un-touch-target-min: 44px;
+    --un-weight-black: 900;
+    --un-weight-bold: 700;
+    --un-weight-extrabold: 800;
+    --un-weight-extralight: 200;
+    --un-weight-light: 300;
+    --un-weight-medium: 500;
+    --un-weight-normal: 400;
+    --un-weight-semibold: 600;
+    --un-weight-thin: 100;
+    --un-z-base: 0;
+    --un-z-drawer: 200;
+    --un-z-modal: 400;
+    --un-z-overlay: 300;
+    --un-z-popover: 500;
+    --un-z-sticky: 100;
+    --un-z-toast: 600;
+    --un-z-tooltip: 700;
+  }
+
+  /*
+   * Dark, and only dark. The attribute selector is emitted alongside :root so an app that sets
+   * data-un-theme="dark" explicitly still resolves, and so adding a second theme later is one
+   * more block rather than a change of shape.
+   */
+  :root,
+  [data-un-theme='dark'] {
+    --un-accent: rgb(91 253 139 / 0.1);
+    --un-accent-foreground: #5bfd8b;
+    --un-alert: #ff5850;
+    --un-background: #000000;
+    --un-bg-accent-50: rgb(91 253 139 / 0.05);
+    --un-bg-destructive-10: rgb(217 83 75 / 0.1);
+    --un-bg-muted-40: rgb(174 174 174 / 0.04);
+    --un-bg-muted-50: rgb(174 174 174 / 0.05);
+    --un-border: rgb(255 255 255 / 0.12);
+    --un-border-destructive-50: rgb(217 83 75 / 0.5);
+    --un-border-muted-40: rgb(255 255 255 / 0.04);
+    --un-card: rgb(174 174 174 / 0.05);
+    --un-card-foreground: #faf8f8;
+    --un-control: rgb(174 174 174 / 0.1);
+    --un-control-hover: rgb(174 174 174 / 0.16);
+    --un-destructive: #d9534b;
+    --un-destructive-20-hover: rgb(217 83 75 / 0.2);
+    --un-destructive-foreground: #000000;
+    --un-destructive-hover: #e4736c;
+    --un-edge-angle: 180deg;
+    --un-edge-stops: rgb(255 255 255 / 0.05), rgb(255 255 255 / 0);
+    --un-edge-stops-accent: rgb(91 253 139 / 0.28), rgb(91 253 139 / 0);
+    --un-edge-stops-error: rgb(217 83 75 / 0.55), rgb(217 83 75 / 0.06);
+    --un-edge-stops-strong: rgb(255 255 255 / 0.10), rgb(255 255 255 / 0);
+    --un-elevation-flat: 0 1px 2px 0 rgb(0 0 0 / 0.40);
+    --un-elevation-inset: inset 8px 8px 20px rgb(255 255 255 / 0.02), inset -8px -8px 20px rgb(255 255 255 / 0.02);
+    --un-elevation-overlay: inset 0 1px 0 0 rgb(255 255 255 / 0.08), 0 12px 28px -6px rgb(0 0 0 / 0.60);
+    --un-elevation-raised: inset 0 1px 0 0 rgb(255 255 255 / 0.06), 0 2px 6px -1px rgb(0 0 0 / 0.50);
+    --un-emphasis-wash: radial-gradient(120% 108% at 0% 0%, rgb(124 242 166 / 0.42) 0%, rgb(47 211 107 / 0.14) 55%, rgb(47 211 107 / 0) 100%);
+    --un-emphasis-wash-negative: radial-gradient(120% 108% at 0% 0%, rgb(217 83 75 / 0.30) 0%, rgb(217 83 75 / 0) 62%);
+    --un-foreground: #faf8f8;
+    --un-chart-1: #3288ff;
+    --un-chart-2: #9c32ff;
+    --un-chart-3: #d9558f;
+    --un-chart-4: #bc74ff;
+    --un-chart-5: #22d3ee;
+    --un-chart-6: #fbbf24;
+    --un-chart-area-from: rgb(91 253 139 / 0.28);
+    --un-chart-area-to: rgb(91 253 139 / 0);
+    --un-chart-axis: #8b938f;
+    --un-chart-grid: rgb(250 248 248 / 0.08);
+    --un-chart-zero-line: rgb(250 248 248 / 0.22);
+    --un-info: #3288ff;
+    --un-input: rgb(255 255 255 / 0.12);
+    --un-muted: rgb(174 174 174 / 0.05);
+    --un-muted-foreground: rgb(250 248 248 / 0.6);
+    --un-negative: #d9534b;
+    --un-neon-green: #adfa1d;
+    --un-neutral-value: #a5aca9;
+    --un-overlay-scrim: rgb(0 0 0 / 0.68);
+    --un-popover: rgb(0 0 0 / 0.7);
+    --un-popover-foreground: #faf8f8;
+    --un-positive: #5bfd8b;
+    --un-primary: #5bfd8b;
+    --un-primary-foreground: #000000;
+    --un-primary-hover: #7cf2a6;
+    --un-ring: #5bfd8b;
+    --un-secondary: rgb(250 248 248 / 0.08);
+    --un-secondary-foreground: #faf8f8;
+    --un-secondary-hover: rgb(250 248 248 / 0.16);
+    --un-sidebar-accent: rgb(91 253 139 / 0.1);
+    --un-sidebar-accent-foreground: #5bfd8b;
+    --un-sidebar-background: #000000;
+    --un-sidebar-border: rgb(255 255 255 / 0.12);
+    --un-sidebar-foreground: #a5aca9;
+    --un-sidebar-foreground-70: rgb(165 172 169 / 0.7);
+    --un-sidebar-primary: #5bfd8b;
+    --un-sidebar-primary-foreground: #000000;
+    --un-sidebar-ring: #5bfd8b;
+    --un-success: #5bfd8b;
+    --un-success-hover: #7cf2a6;
+    --un-surface-floating: #0a0a0a;
+    --un-tint-brand: rgb(91 253 139 / 0.05);
+    --un-tint-chart: rgb(156 50 255 / 0.05);
+    --un-tint-info: rgb(50 136 255 / 0.05);
+    --un-warning: #e6b800;
+    color-scheme: dark;
+  }
+}

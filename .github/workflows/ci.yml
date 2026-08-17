@@ -1,0 +1,112 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tokens:
+    name: Tokens (G1 · G2 · G7)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # G2 needs the base commit to diff the token contract against.
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # ---- G2: capture the contract as it exists on the base branch, BEFORE regenerating ----
+      - name: Snapshot base token contract
+        if: github.event_name == 'pull_request'
+        run: |
+          git show "origin/${{ github.base_ref }}:packages/tokens/generated/tokens.contract.json" \
+            > /tmp/base-contract.json 2>/dev/null || rm -f /tmp/base-contract.json
+
+      # ---- G1: generated files must match what the Figma export produces ----
+      - name: Regenerate tokens
+        run: pnpm tokens
+
+      - name: G1 — no drift in generated files
+        run: |
+          if ! git diff --exit-code -- packages/tokens/generated; then
+            echo ""
+            echo "✗ packages/tokens/generated is out of date."
+            echo "  Run 'pnpm tokens' locally and commit the result."
+            echo "  If you edited a generated file by hand: don't. Edit the Figma export"
+            echo "  or packages/tokens/src/semantic.ts instead."
+            exit 1
+          fi
+
+      - name: G2 — token contract diff
+        if: github.event_name == 'pull_request'
+        run: node tooling/check-contract.mjs /tmp/base-contract.json packages/tokens/generated/tokens.contract.json
+
+      # ---- G7 lives inside the test suite ----
+      - name: G7 — contrast and theme parity
+        run: pnpm test
+
+      - run: pnpm typecheck
+      - run: pnpm build
+
+      - name: Upload token report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: token-report
+          path: |
+            packages/tokens/generated/figma-report.json
+            packages/tokens/generated/tokens.contract.json
+
+  fixtures:
+    name: Consumer fixtures (G8)
+    runs-on: ubuntu-latest
+    # Separate job: these install real tarballs into throwaway applications and are the slowest
+    # thing in CI. Keeping them off the fast path means a typo still fails in under a minute.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      # Packs @noduf/unalyze-tokens and @noduf/unalyze-ui, installs them into apps/fixtures/* copied outside
+      # the workspace, and builds each. Catches ESM/CJS, exports-map, peer-dependency and
+      # 'use client' failures — the ones a green library build cannot see.
+      - run: node tooling/test-fixtures.mjs
+
+  preview:
+    name: Preview build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      # The single-file visual review, attached to every run so a reviewer can download one HTML
+      # file and see exactly what the branch looks like.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: visual-review
+          path: apps/preview/dist/artifact.html

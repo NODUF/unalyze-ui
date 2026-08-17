@@ -1,0 +1,90 @@
+{
+  "$comment": [
+    "Maps the raw Figma Variables export onto our token layers.",
+    "Collections are matched on the export's `name` field, never on filename, so re-exporting",
+    "with different filenames cannot silently drop a collection."
+  ],
+
+  "neutral": "slate",
+  "$neutralComment": [
+    "The mode-name suffix in the shadcn/ui collection, NOT the ramp its light mode resolves",
+    "through. The modes are literally called 'light/slate' and 'dark/slate', but the light mode",
+    "aliases almost entirely through zinc (foreground -> zinc/950, muted -> zinc/100); only",
+    "'secondary' goes through slate. Renaming the modes in Figma would settle it — until then",
+    "this string has to match what the file says, not what the file does."
+  ],
+
+  "themes": {
+    "dark": "dark/{neutral}"
+  },
+  "$themesComment": [
+    "DARK ONLY, deliberately. The design is dark-only, so a light theme could only ever be",
+    "guesswork — and guessed values that nobody has looked at are worse than no values, because",
+    "they look finished.",
+    "",
+    "The machinery is unchanged and light is one line away: add \"light\": \"light/{neutral}\" here,",
+    "restore the light halves in packages/tokens/src/semantic.ts, and regenerate. The shadcn/ui",
+    "collection in Figma still carries its light/slate mode untouched."
+  ],
+
+  "collections": {
+    "Tailwind Colors": { "layer": "palette", "emitCss": false },
+    "Tailwind Primitives": { "layer": "scale", "emitCss": "partial" },
+    "Typography": { "layer": "type", "emitCss": true },
+    "shadcn/ui": { "layer": "semantic", "emitCss": true, "themed": true },
+    "Primitives": { "layer": "contract", "emitCss": true },
+    "unalyze_brand": { "layer": "palette", "emitCss": false }
+  },
+
+  "$layerComment": {
+    "palette": "244 raw Tailwind colours. JS-only — emitting all of them would add ~12 kB of dead CSS to every consumer.",
+    "scale": "Spacing, radius, opacity, container widths. Spacing and containers are emitted; the raw radius ramp is not (the contract layer owns radius).",
+    "type": "Font families, sizes, line heights, weights. All emitted.",
+    "semantic": "The shadcn/ui role vocabulary. Emitted per theme.",
+    "contract": "The three radius knobs and two state opacities that Figma components actually bind to. Emitted using each variable's own codeSyntax expression where it has one."
+  },
+
+  "groups": {
+    "$comment": [
+      "Per-group rules. A leaf name is turned into a token name as:",
+      "  key  = leaf starts with `strip` ? leaf without `strip` : leaf",
+      "  key  = aliases[key] ?? key",
+      "  name = (key === as) ? as : `${as}-${key}`",
+      "A variable whose group has no rule here fails the build — see ignoredVariables."
+    ],
+    "Tailwind Primitives": {
+      "border radius": {
+        "as": "radius-ramp",
+        "unit": "px",
+        "strip": "rounded-",
+        "aliases": { "rounded": "base" },
+        "emitCss": false
+      },
+      "gap": { "as": "space", "unit": "px", "strip": "gap-" },
+      "padding": { "as": "space", "unit": "px", "strip": "p-" },
+      "opacity": { "as": "opacity", "unit": "percent", "strip": "opacity-", "emitCss": false },
+      "max-w": { "as": "container", "unit": "px", "strip": "max-w-" }
+    },
+    "Typography": {
+      "font-family": { "as": "font", "unit": "raw", "strip": "font-" },
+      "font-size": { "as": "text", "unit": "px", "strip": "text-" },
+      "line-height": { "as": "leading", "unit": "px", "strip": "leading-" },
+      "font-weight": { "as": "weight", "unit": "number", "strip": "font-" }
+    },
+    "Primitives": {
+      "radius": { "as": "radius", "unit": "px", "strip": "radius-" },
+      "state": { "as": "opacity", "unit": "percent" }
+    }
+  },
+
+  "renames": {
+    "$comment": "Known upstream typos and awkward names, fixed here rather than in the Figma file so the export stays a faithful copy.",
+    "shadcn/ui": {
+      "hover:succes": "success-hover"
+    }
+  },
+
+  "ignoredVariables": {
+    "$comment": "Figma variables we deliberately do not emit. Anything NOT listed here and NOT mapped fails the build."
+  }
+}

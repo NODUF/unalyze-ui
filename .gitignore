@@ -1,0 +1,33 @@
+node_modules/
+dist/
+.turbo/
+*.tsbuildinfo
+.DS_Store
+.env
+.env.local
+
+# Storybook / Playwright (phase 2+)
+storybook-static/
+test-results/
+playwright-report/
+
+# Consumer fixture installs (phase 2+)
+apps/fixtures/*/node_modules/
+apps/fixtures/*/.next/
+
+# NOTE: packages/tokens/generated/ is deliberately NOT ignored.
+# It is generated but committed, so token changes show up as a reviewable diff
+# and CI gate G1 can fail on drift.
+
+# ---------------------------------------------------------------------------
+# Client strategy documents — deliberately NOT in the library repo.
+#
+# The gamification audit is an internal decision record with founder-level
+# commitments in it. The dev team needs the component library, not that. Move a
+# copy in on purpose if it is ever wanted; do not let it arrive by default.
+# ---------------------------------------------------------------------------
+unalyze-gamification-*.md
+UNALYZE-*.pdf
+
+# Local agent/editor state
+.claude/

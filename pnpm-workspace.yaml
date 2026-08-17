@@ -1,0 +1,15 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+  # apps/fixtures/* is deliberately NOT a workspace member. Fixtures exist to install the packed
+  # tarball the way the consuming team will; linking them into the workspace would resolve
+  # @noduf/unalyze-ui to the source and quietly bypass the exports map, the peer ranges and the
+  # 'use client' directive — the exact three things gate G8 is there to check.
+  - '!apps/fixtures/**'
+allowBuilds:
+  # esbuild ships prebuilt binaries and needs its install script to pick the right one.
+  # tsx, tsup and vitest all depend on it.
+  # Only used by the Tailwind CLI's --watch mode during local development. Not needed for a
+  # one-shot CI build, so it stays off: fewer native postinstall scripts on the build machine.
+  '@parcel/watcher': false
+  esbuild: true

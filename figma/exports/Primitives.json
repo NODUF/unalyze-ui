@@ -1,0 +1,124 @@
+{
+  "id": "VariableCollectionId:2732:15521",
+  "name": "Primitives",
+  "modes": {
+    "2732:0": "Mode 1"
+  },
+  "variableIds": [
+    "VariableID:2732:15523",
+    "VariableID:2732:15529",
+    "VariableID:2732:15530",
+    "VariableID:2732:15524",
+    "VariableID:2732:15525"
+  ],
+  "variables": [
+    {
+      "id": "VariableID:2732:15523",
+      "name": "radius/radius",
+      "description": "Panel radius. Every card, the KPI strip and the calendar use it.",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "2732:0": 32
+      },
+      "resolvedValuesByMode": {
+        "2732:0": {
+          "resolvedValue": 32,
+          "alias": null
+        }
+      },
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {
+        "WEB": "var(--un-radius)"
+      }
+    },
+    {
+      "id": "VariableID:2732:15524",
+      "name": "state/hover",
+      "description": "",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "2732:0": 80
+      },
+      "resolvedValuesByMode": {
+        "2732:0": {
+          "resolvedValue": 80,
+          "alias": "VariableID:394:5340",
+          "aliasName": "opacity/opacity-80"
+        }
+      },
+      "scopes": [
+        "OPACITY"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:2732:15525",
+      "name": "state/disabled",
+      "description": "",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "2732:0": 50
+      },
+      "resolvedValuesByMode": {
+        "2732:0": {
+          "resolvedValue": 50,
+          "alias": "VariableID:394:5337",
+          "aliasName": "opacity/opacity-50"
+        }
+      },
+      "scopes": [
+        "OPACITY"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {}
+    },
+    {
+      "id": "VariableID:2732:15529",
+      "name": "radius/radius-md",
+      "description": "DERIVED: the panel of a floating menu, and a field that is not a pill. 16 was tried first and reads as a bubble on a dropdown.",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "2732:0": 12
+      },
+      "resolvedValuesByMode": {
+        "2732:0": {
+          "resolvedValue": 12,
+          "alias": null
+        }
+      },
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {
+        "WEB": "var(--un-radius-md)"
+      }
+    },
+    {
+      "id": "VariableID:2732:15530",
+      "name": "radius/radius-sm",
+      "description": "DERIVED: a row nested inside a floating menu, 4px inside the panel radius. The 2px dot-matrix cell it used to hold is a data mark, not a control radius.",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "2732:0": 8
+      },
+      "resolvedValuesByMode": {
+        "2732:0": {
+          "resolvedValue": 8,
+          "alias": null
+        }
+      },
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {
+        "WEB": "var(--un-radius-sm)"
+      }
+    }
+  ]
+}

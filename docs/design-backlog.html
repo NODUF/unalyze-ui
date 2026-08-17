@@ -1,0 +1,516 @@
+<title>Unalyze Design Backlog</title>
+<style>
+  :root {
+    --ground: #080a09;
+    --panel: #101312;
+    --panel-2: #161a18;
+    --line: rgba(255, 255, 255, 0.1);
+    --line-soft: rgba(255, 255, 255, 0.05);
+    --ink: #faf8f8;
+    --ink-muted: #a5aca9;
+    --ink-subtle: #7b837f;
+    --green: #5bfd8b;
+    --green-dim: rgba(91, 253, 139, 0.12);
+    --red: #d9534b;
+    --red-dim: rgba(217, 83, 75, 0.14);
+    --amber: #e6b800;
+    --amber-dim: rgba(230, 184, 0, 0.14);
+    --violet: #bc74ff;
+    --radius: 18px;
+    --radius-sm: 10px;
+    --measure: 68ch;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 56px 24px 100px;
+  }
+
+  /* ---------- type ---------- */
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 650;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-weight: 640;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    font-weight: 640;
+    margin: 0 0 4px;
+  }
+
+  p { margin: 0 0 14px; max-width: var(--measure); }
+  .lead { font-size: 17px; color: var(--ink-muted); max-width: var(--measure); }
+  .dim { color: var(--ink-muted); }
+  .subtle { color: var(--ink-subtle); }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88em;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.12em 0.42em;
+    border-radius: 5px;
+  }
+  strong { font-weight: 640; color: var(--ink); }
+
+  section { margin-top: 52px; }
+  .section-head { margin-bottom: 22px; }
+
+  /* ---------- findings ---------- */
+
+  .finding {
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-bottom: 14px;
+    border-left: 2px solid var(--green);
+  }
+  .finding.warn { border-left-color: var(--amber); }
+  .finding p:last-child { margin-bottom: 0; }
+
+  /* ---------- component rows ---------- */
+
+  .group { margin-bottom: 34px; }
+
+  .group-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid var(--line);
+  }
+  .group-head .count {
+    font-size: 12px;
+    color: var(--ink-subtle);
+    font-variant-numeric: tabular-nums;
+    margin-left: auto;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line-soft);
+    align-items: start;
+  }
+  .row:last-child { border-bottom: 0; }
+
+  @media (max-width: 680px) {
+    .row { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  .name { font-weight: 600; letter-spacing: -0.01em; }
+  .name .file {
+    display: block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    color: var(--ink-subtle);
+    font-weight: 400;
+    margin-top: 3px;
+  }
+  .need { color: var(--ink-muted); font-size: 14px; }
+  .need em { color: var(--ink); font-style: normal; font-weight: 600; }
+
+  /* ---------- chips ---------- */
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 22px;
+    padding: 0 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .chip.done { background: var(--green-dim); color: var(--green); }
+  .chip.states { background: var(--amber-dim); color: var(--amber); }
+  .chip.new { background: var(--red-dim); color: var(--red); }
+  .chip.partial { background: rgba(188, 116, 255, 0.14); color: var(--violet); }
+  .chip.ghost { background: rgba(255, 255, 255, 0.07); color: var(--ink-muted); }
+
+  /* ---------- states matrix ---------- */
+
+  .matrix-wrap { overflow-x: auto; margin: 18px 0 6px; }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14px; }
+  th, td { text-align: left; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--line-soft); }
+  th {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+    font-weight: 650;
+    border-bottom-color: var(--line);
+  }
+  td.state { color: var(--ink); font-weight: 600; white-space: nowrap; }
+
+  /* ---------- decisions ---------- */
+
+  .decision {
+    background: var(--panel);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin-bottom: 10px;
+  }
+  .decision h3 { margin-bottom: 5px; }
+  .decision p { margin-bottom: 0; font-size: 14px; }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-subtle);
+  }
+</style>
+
+<div class="wrap">
+
+  <p class="eyebrow">@noduf/unalyze-ui · design backlog</p>
+  <h1>Co je potřeba donavrhnout</h1>
+  <p class="lead">
+    Přečteno přímo ze souboru <code>💹 UNALYZE PROJECT 💹</code> — stránka <code>APP</code>,
+    knihovna <code>📚 COMPONENTS</code>, lokální styly. Rozdělené podle toho, kolik práce to
+    reálně je.
+  </p>
+
+  <section>
+    <div class="section-head">
+      <h2>Dvě věci, které mění rozsah</h2>
+    </div>
+
+    <div class="finding">
+      <h3>Komponenty už ve Figmě máš — jen nejsou přestylované</h3>
+      <p class="dim">
+        Stránka <code>📚 COMPONENTS</code> obsahuje kompletní shadcn kit: Alert, Accordion,
+        Badge, Button, Calendar, Card, Checkbox, Dialog, Dropdown Menu, Form, Input, Label,
+        Popover, Progress, Radio Group, Select, Sheet, Skeleton, Switch, Table, Tabs, Textarea,
+        Toast, Tooltip a další. K tomu <strong>137 textových a 28 efektových stylů</strong> včetně
+        hotových focus ringů.
+      </p>
+      <p class="dim">
+        Takže <strong>nekreslíš od nuly — přebarvuješ.</strong> Vzít stávající komponentu a
+        aplikovat na ni materiál z dashboardu (závoj, rim, vnitřní světlo, pilulkový tvar) je
+        podstatně méně práce než návrh od začátku.
+      </p>
+    </div>
+
+    <div class="finding warn">
+      <h3>Návrh nemá ani jeden interakční stav</h3>
+      <p class="dim">
+        Stránka <code>APP</code> obsahuje <strong>nula Figma komponent a nula variant setů</strong> —
+        je to plochý import z běžící aplikace. Každý hover, focus, disabled, error a loading, který
+        je teď v kódu, jsem <strong>odvodil</strong>.
+      </p>
+      <p class="dim">
+        To je jediná největší mezera. Prvků je hodně, ale stačí je nakreslit
+        <strong>jednou pro každý stav</strong> — pravidlo pak platí napříč knihovnou.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Stavy — nejdůležitější část</h2>
+      <p class="dim">
+        Pokud budeš dělat jen jednu věc, ať je to tohle. Nakresli stavy na
+        <strong>Buttonu</strong> a na <strong>jednom poli</strong>; zbytek se z toho odvodí.
+      </p>
+    </div>
+
+    <div class="matrix-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Stav</th>
+            <th>Co teď v kódu je</th>
+            <th>Potřebuju</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="state">hover</td>
+            <td class="dim">rim ztrojnásobí jas, výplň o stupeň světlejší</td>
+            <td class="dim">potvrdit, nebo nakreslit</td>
+          </tr>
+          <tr>
+            <td class="state">focus</td>
+            <td class="dim">2px zelený prstenec s odsazením 2px</td>
+            <td class="dim">ve Figmě máš <code>focus ring/2px – Primary</code>, jen ho aplikovat</td>
+          </tr>
+          <tr>
+            <td class="state">active / pressed</td>
+            <td class="dim">nic</td>
+            <td class="dim">chybí úplně</td>
+          </tr>
+          <tr>
+            <td class="state">disabled</td>
+            <td class="dim">50 % krytí</td>
+            <td class="dim">potvrdit</td>
+          </tr>
+          <tr>
+            <td class="state">loading</td>
+            <td class="dim">spinner, popisek zůstává</td>
+            <td class="dim">potvrdit</td>
+          </tr>
+          <tr>
+            <td class="state">error</td>
+            <td class="dim">rim ztrátovou červenou <code>#D9534B</code></td>
+            <td class="dim">chybí — a je otázka, jestli má být jiná než ztrátová</td>
+          </tr>
+          <tr>
+            <td class="state">selected / active nav</td>
+            <td class="dim">odvozeno z aktivní záložky Dashboard</td>
+            <td class="dim">potvrdit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Po komponentách</h2>
+      <p class="dim">
+        <span class="chip done">hotové</span>
+        <span class="chip states">chybí stavy</span>
+        <span class="chip partial">v návrhu částečně</span>
+        <span class="chip new">chybí celé</span>
+      </p>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <h3>Postavené z návrhu</h3>
+        <span class="count">5 komponent</span>
+      </div>
+
+      <div class="row">
+        <div class="name">Surface / Card<span class="file">surface.tsx</span></div>
+        <div class="need"><span class="chip done">hotové</span> Závoj, rim, vnitřní světlo, backdrop blur, tóny podle série. Nic nepotřebuju.</div>
+      </div>
+      <div class="row">
+        <div class="name">Text / Heading<span class="file">text.tsx</span></div>
+        <div class="need"><span class="chip done">hotové</span> Jedenáct rolí z 23 stylů v návrhu. Plná Nohemi.</div>
+      </div>
+      <div class="row">
+        <div class="name">Badge<span class="file">badge.tsx</span></div>
+        <div class="need"><span class="chip done">hotové</span> Série dní i počítadlo notifikací.</div>
+      </div>
+      <div class="row">
+        <div class="name">Divider<span class="file">feedback.tsx</span></div>
+        <div class="need"><span class="chip done">hotové</span> Svislé oddělovače v KPI pásu.</div>
+      </div>
+      <div class="row">
+        <div class="name">Button<span class="file">button.tsx</span></div>
+        <div class="need"><span class="chip states">chybí stavy</span> Klidový stav sedí (pilulka, zelená s černým textem, glass varianta). <em>Potřebuju hover, focus, active, disabled, loading</em> — a potvrdit, že primární akce je opravdu zelená výplň.</div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <h3>Postavené odvozením — potřebuju ověřit</h3>
+        <span class="count">8 komponent</span>
+      </div>
+      <p class="subtle" style="font-size: 13px; margin: 12px 0 0;">
+        V kódu označené <code>@derived</code>. Fungují a jsou otestované; jen nemají předlohu.
+      </p>
+
+      <div class="row">
+        <div class="name">Input / Textarea<span class="file">input.tsx</span></div>
+        <div class="need"><span class="chip new">chybí celé</span> Odvodil jsem je z materiálu karty. <em>Nakresli: tři výšky, s ikonou i bez, placeholder, vyplněné, error, disabled.</em> Tohle je nejužitečnější jednotlivá věc na seznamu.</div>
+      </div>
+      <div class="row">
+        <div class="name">Checkbox<span class="file">checkbox.tsx</span></div>
+        <div class="need"><span class="chip new">chybí celé</span> <em>Nezaškrtnuto, zaškrtnuto, částečně, disabled + focus.</em> Fajfka jako glyf.</div>
+      </div>
+      <div class="row">
+        <div class="name">Switch<span class="file">switch.tsx</span></div>
+        <div class="need"><span class="chip new">chybí celé</span> <em>Vypnuto, zapnuto, disabled.</em> Rozměr dráhy a knoflíku.</div>
+      </div>
+      <div class="row">
+        <div class="name">Label + FormField<span class="file">label.tsx</span></div>
+        <div class="need"><span class="chip new">chybí celé</span> Popisek jsem vzal z eyebrow nad KPI. <em>Potřebuju rozestupy: popisek → pole → nápověda → chyba</em>, a jak vypadá povinné pole.</div>
+      </div>
+      <div class="row">
+        <div class="name">Spinner<span class="file">feedback.tsx</span></div>
+        <div class="need"><span class="chip partial">částečně</span> V návrhu je jen donut s procenty. <em>Potřebuju samostatný indikátor načítání</em> — nebo řekni, že se má použít ten donut.</div>
+      </div>
+      <div class="row">
+        <div class="name">Skeleton<span class="file">feedback.tsx</span></div>
+        <div class="need"><span class="chip new">chybí celé</span> <em>Jak vypadá karta, než dorazí data.</em> Teď je to závoj s přejezdem světla.</div>
+      </div>
+      <div class="row">
+        <div class="name">EmptyState<span class="file">feedback.tsx</span></div>
+        <div class="need"><span class="chip new">chybí celé</span> <em>Prázdný dashboard, prázdný kalendář, žádné výsledky filtru.</em> Ikona / titulek / popis / jedna akce.</div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <h3>V dashboardu jsou, ale nejsou vytažené jako komponenta</h3>
+        <span class="count">5 komponent</span>
+      </div>
+      <p class="subtle" style="font-size: 13px; margin: 12px 0 0;">
+        Tyhle bych uměl odvodit z dashboardu, ale radši ať je určíš ty — jsou vidět na každé obrazovce.
+      </p>
+
+      <div class="row">
+        <div class="name">Tabs<span class="file">—</span></div>
+        <div class="need"><span class="chip partial">částečně</span> Horní navigace <em>Dashboard / Úspěchy / Komunita</em> je záložkový vzor. Potřebuju aktivní, neaktivní, hover a <em>zamčený</em> stav (Komunita má zámek).</div>
+      </div>
+      <div class="row">
+        <div class="name">IconButton<span class="file">—</span></div>
+        <div class="need"><span class="chip partial">částečně</span> Kolečka <em>Expand</em> (44px), nav rail (38px), zvonek. Potřebuju velikosti a stavy jako sadu.</div>
+      </div>
+      <div class="row">
+        <div class="name">Progress<span class="file">—</span></div>
+        <div class="need"><span class="chip partial">částečně</span> Dvě různé věci: <em>lineární pruh s ryskami</em> (Profit factor 0 / 1.0 / +2) a <em>donut</em> (Úspěšnost). Potřebuju je jako komponenty, ne jako kresbu.</div>
+      </div>
+      <div class="row">
+        <div class="name">Select / Dropdown<span class="file">—</span></div>
+        <div class="need"><span class="chip partial">částečně</span> V Trading Reportu je <em>„2026 ⌄"</em>, ale rozbalený stav nikde. <em>Potřebuju otevřené menu</em> — položka, hover, vybraná, oddělovač.</div>
+      </div>
+      <div class="row">
+        <div class="name">Dialog<span class="file">—</span></div>
+        <div class="need"><span class="chip partial">částečně</span> <code>MODAL POPUP</code> je skořápka s lorem ipsum a čárkovaným rámečkem. <em>Potřebuju reálný obsah</em>: hlavička, tělo, patička s tlačítky, a jestli má scrim rozostření.</div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <h3>Zatím nikde</h3>
+        <span class="count">9 komponent</span>
+      </div>
+      <p class="subtle" style="font-size: 13px; margin: 12px 0 0;">
+        Nejsou blokující — dokud nejsou, nestavím je. Seřazené podle toho, jak brzy je produkt bude potřebovat.
+      </p>
+
+      <div class="row">
+        <div class="name">Tooltip</div>
+        <div class="need"><span class="chip new">chybí celé</span> Ikona <em>ⓘ</em> u „Unalyze Score" na něco ukazuje, ale bublina nakreslená není.</div>
+      </div>
+      <div class="row">
+        <div class="name">Table</div>
+        <div class="need"><span class="chip new">chybí celé</span> Seznam obchodů. Kalendář je mřížka, ne tabulka — potřebuju hlavičku, řádek, hover, řazení, hustotu.</div>
+      </div>
+      <div class="row">
+        <div class="name">Toast</div>
+        <div class="need"><span class="chip new">chybí celé</span> Potvrzení akce. Kam se umisťuje a jak dlouho žije.</div>
+      </div>
+      <div class="row">
+        <div class="name">Alert</div>
+        <div class="need"><span class="chip new">chybí celé</span> Trvalé sdělení v obsahu — „data jsou částečná", „synchronizace selhala".</div>
+      </div>
+      <div class="row">
+        <div class="name">DropdownMenu / ContextMenu</div>
+        <div class="need"><span class="chip new">chybí celé</span> Akce nad položkou. Sdílí vzhled se Selectem, takže stačí jednou.</div>
+      </div>
+      <div class="row">
+        <div class="name">RadioGroup</div>
+        <div class="need"><span class="chip new">chybí celé</span> Odvodím z Checkboxu, jakmile bude.</div>
+      </div>
+      <div class="row">
+        <div class="name">Sheet / Drawer</div>
+        <div class="need"><span class="chip new">chybí celé</span> Mobil: detail dne, filtry. Podle plánu má být plná šířka zespodu s úchytem.</div>
+      </div>
+      <div class="row">
+        <div class="name">Accordion</div>
+        <div class="need"><span class="chip new">chybí celé</span> Nízká priorita.</div>
+      </div>
+      <div class="row">
+        <div class="name">Pagination / Breadcrumb</div>
+        <div class="need"><span class="chip new">chybí celé</span> Nízká priorita — až bude tabulka a hlubší navigace.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Otázky, na které umíš odpovědět jen ty</h2>
+    </div>
+
+    <div class="decision">
+      <h3>Avatar — návrh ho má, ale audit ho zakazuje</h3>
+      <p class="dim">
+        Vpravo nahoře je kolečko s profilovou fotkou. Gamifikační audit ale uvádí jako binding
+        constraint: <em>„No avatar exists. Future frame/status design must work without a profile
+        photo."</em> Buď je audit zastaralý, nebo ten avatar v návrhu být nemá. Neumím to rozhodnout.
+      </p>
+    </div>
+
+    <div class="decision">
+      <h3>Chybová barva vs. ztrátová</h3>
+      <p class="dim">
+        Teď používám ztrátovou <code>#D9534B</code> i pro chyby ve formuláři. Notifikace už mají
+        vlastní <code>#FF5850</code>. Otázka: má mít chyba svou třetí červenou, nebo je v pořádku,
+        že „neplatný vstup" vypadá jako „prodělal jsi"?
+      </p>
+    </div>
+
+    <div class="decision">
+      <h3>Nohemi a tabulkové číslice</h3>
+      <p class="dim">
+        V živém dashboardu se cifry mění. Pokud Nohemi nemá <code>tnum</code>, bude sloupec
+        P&amp;L hodnot poskakovat při každé aktualizaci. Ve statickém mockupu to není vidět.
+        Stálo by za ověření proti reálným font souborům.
+      </p>
+    </div>
+
+    <div class="decision">
+      <h3>Ambientní světlo za kartami</h3>
+      <p class="dim">
+        Za layoutem plavou obří rozostřené elipsy (<code>LAYER_BLUR 200</code> a <code>420</code>),
+        které živí backdrop blur karet. Patří do knihovny, nebo je to věc konkrétní obrazovky?
+        Teď to mám jen v náhledu, ne v balíčku.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Sestaveno ze souboru <code>sPhUUdRZESDiMDKzD1GO4L</code> · stránka <code>APP</code>
+    (<code>667:107</code>) · <code>✅ APP FINAL</code> je prázdná, takže <code>APP</code> je
+    aktuální · 13 komponent v kódu, 192 testů zelených
+  </footer>
+
+</div>

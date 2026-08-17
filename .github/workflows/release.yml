@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+# Two runs publishing at once would race for the same version number.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: write # tag the commit and open the release PR
+  packages: write # publish to GitHub Packages
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Changesets needs the history to work out what has already been released.
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          # Publishing goes to GitHub Packages, not npmjs.
+          registry-url: https://npm.pkg.github.com
+          scope: '@noduf'
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      # Nothing ships that has not installed cleanly outside this workspace. This is the gate that
+      # catches an exports-map, ESM/CJS or `use client` mistake — none of which a green build sees.
+      - name: Verify the artefact installs
+        run: node tooling/test-fixtures.mjs
+
+      - run: pnpm test
+      - run: pnpm typecheck
+
+      # Changesets does one of two things depending on what is pending:
+      #
+      #   pending changesets  → opens or updates a "Version Packages" PR. Nothing publishes.
+      #   none pending        → the version bump has already been merged, so it publishes and tags.
+      #
+      # So a release is always two merges, and the second one is a deliberate act rather than a
+      # side effect of merging a feature.
+      - name: Version or publish
+        uses: changesets/action@v1
+        with:
+          version: pnpm run version-packages
+          publish: pnpm run release
+          commit: 'chore: version packages'
+          title: 'chore: version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Attach the visual review to the run
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-review
+          path: apps/preview/dist/unalyze-ui-review.html

@@ -1,0 +1,30 @@
+{
+  "name": "unalyze-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Unalyze frontend library — Figma → design tokens → shadcn/ui primitives → @noduf/unalyze-ui.",
+  "packageManager": "pnpm@11.13.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "tokens": "pnpm --filter @noduf/unalyze-tokens run build",
+    "tokens:check": "pnpm run tokens && git diff --exit-code -- packages/tokens/generated",
+    "preview": "pnpm --filter @noduf/unalyze-preview run dev",
+    "test:fixtures": "pnpm run build && node tooling/test-fixtures.mjs",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.0",
+    "tsx": "^4.20.0",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  }
+}
