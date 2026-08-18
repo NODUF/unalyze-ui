@@ -1,7 +1,7 @@
 {
   "name": "@noduf/unalyze-tokens",
-  "version": "0.1.0",
-  "description": "Unalyze design tokens \u2014 generated from Figma Variables, emitted as CSS custom properties and JS values.",
+  "version": "0.2.0",
+  "description": "Unalyze design tokens — generated from Figma Variables, emitted as CSS custom properties and JS values.",
   "license": "UNLICENSED",
   "private": false,
   "type": "module",

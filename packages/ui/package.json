@@ -1,7 +1,7 @@
 {
   "name": "@noduf/unalyze-ui",
-  "version": "0.1.0",
-  "description": "Unalyze component library \u2014 Radix behaviour, the Unalyze visual language, precompiled CSS.",
+  "version": "0.2.0",
+  "description": "Unalyze component library — Radix behaviour, the Unalyze visual language, precompiled CSS.",
   "license": "UNLICENSED",
   "private": false,
   "type": "module",
