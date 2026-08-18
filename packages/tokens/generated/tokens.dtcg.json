@@ -946,6 +946,138 @@
       }
     }
   },
+  "chart-1": {
+    "$type": "color",
+    "$value": {
+      "dark": "#3288ff"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-2": {
+    "$type": "color",
+    "$value": {
+      "dark": "#9c32ff"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-3": {
+    "$type": "color",
+    "$value": {
+      "dark": "#d9558f"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-4": {
+    "$type": "color",
+    "$value": {
+      "dark": "#bc74ff"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-5": {
+    "$type": "color",
+    "$value": {
+      "dark": "#22d3ee"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-6": {
+    "$type": "color",
+    "$value": {
+      "dark": "#fbbf24"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-area-from": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0.28)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-area-to": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(91 253 139 / 0)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-axis": {
+    "$type": "color",
+    "$value": {
+      "dark": "#8b938f"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-grid": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(250 248 248 / 0.08)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
+  "chart-zero-line": {
+    "$type": "color",
+    "$value": {
+      "dark": "rgb(250 248 248 / 0.22)"
+    },
+    "$extensions": {
+      "com.unalyze.origin": "code",
+      "com.unalyze.via": {
+        "dark": ""
+      }
+    }
+  },
   "control": {
     "$type": "color",
     "$value": {
@@ -1159,138 +1291,6 @@
       "com.unalyze.origin": "figma",
       "com.unalyze.via": {
         "dark": "Content/base"
-      }
-    }
-  },
-  "chart-1": {
-    "$type": "color",
-    "$value": {
-      "dark": "#3288ff"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-2": {
-    "$type": "color",
-    "$value": {
-      "dark": "#9c32ff"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-3": {
-    "$type": "color",
-    "$value": {
-      "dark": "#d9558f"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-4": {
-    "$type": "color",
-    "$value": {
-      "dark": "#bc74ff"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-5": {
-    "$type": "color",
-    "$value": {
-      "dark": "#22d3ee"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-6": {
-    "$type": "color",
-    "$value": {
-      "dark": "#fbbf24"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-area-from": {
-    "$type": "color",
-    "$value": {
-      "dark": "rgb(91 253 139 / 0.28)"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-area-to": {
-    "$type": "color",
-    "$value": {
-      "dark": "rgb(91 253 139 / 0)"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-axis": {
-    "$type": "color",
-    "$value": {
-      "dark": "#8b938f"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-grid": {
-    "$type": "color",
-    "$value": {
-      "dark": "rgb(250 248 248 / 0.08)"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
-      }
-    }
-  },
-  "chart-zero-line": {
-    "$type": "color",
-    "$value": {
-      "dark": "rgb(250 248 248 / 0.22)"
-    },
-    "$extensions": {
-      "com.unalyze.origin": "code",
-      "com.unalyze.via": {
-        "dark": ""
       }
     }
   },

@@ -22,6 +22,7 @@ import {
   type FigmaCollection,
   type Unit,
 } from './lib/figma'
+import { byName } from './lib/order'
 
 /* ------------------------------------------------------------------ *
  * Config
@@ -285,7 +286,7 @@ const BANNER = `/**
 `
 
 const sortedEntries = <T>(record: Record<string, T>): [string, T][] =>
-  Object.entries(record).sort(([a], [b]) => a.localeCompare(b))
+  Object.entries(record).sort(([a], [b]) => byName(a, b))
 
 /** Emits a plain `Record<string, string>` as a frozen const object. */
 function tsRecord(name: string, record: Record<string, string>, doc: string): string {

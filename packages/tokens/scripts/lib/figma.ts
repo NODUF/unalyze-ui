@@ -11,6 +11,8 @@
  */
 
 import { readFileSync, readdirSync } from 'node:fs'
+
+import { byName } from './order'
 import { join } from 'node:path'
 
 /* ------------------------------------------------------------------ *
@@ -89,7 +91,7 @@ export function loadCollections(dir: string): Map<string, FigmaCollection> {
 
     // Variable order in the export follows Figma's internal ordering, which shifts when a
     // designer reorders the panel. Sorting here keeps generated diffs about VALUES, not order.
-    parsed.variables.sort((a, b) => a.name.localeCompare(b.name))
+    parsed.variables.sort((a, b) => byName(a.name, b.name))
     out.set(parsed.name, parsed)
   }
 

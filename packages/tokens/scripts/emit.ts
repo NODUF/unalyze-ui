@@ -22,11 +22,12 @@ import {
   tokenOrigin,
   type ThemeName,
 } from '../src/semantic'
+import { byName } from './lib/order'
 
 const OUT_DIR = resolve(import.meta.dirname, '../generated')
 
 const sorted = (record: Record<string, string>) =>
-  Object.entries(record).sort(([a], [b]) => a.localeCompare(b))
+  Object.entries(record).sort(([a], [b]) => byName(a, b))
 
 const declarations = (record: Record<string, string>, indent: string) =>
   sorted(record)
