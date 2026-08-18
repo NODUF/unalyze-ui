@@ -66,4 +66,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: visual-review
+          # A missing file here means an earlier step failed. Say that, rather than
+          # adding a second red step that buries it.
+          if-no-files-found: warn
           path: apps/preview/dist/unalyze-ui-review.html

@@ -65,6 +65,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: token-report
+          # A missing file here means an earlier step failed. Say that, rather than
+          # adding a second red step that buries it.
+          if-no-files-found: warn
           path: |
             packages/tokens/generated/figma-report.json
             packages/tokens/generated/tokens.contract.json
@@ -109,4 +112,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: visual-review
+          # Deliberately strict: uploading this file IS this job, so a missing one is a real
+          # failure rather than the echo of an earlier step.
           path: apps/preview/dist/artifact.html
