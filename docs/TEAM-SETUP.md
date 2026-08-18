@@ -33,6 +33,32 @@ Next to `package.json`. Commit it — there is no secret in it.
 npm install @noduf/unalyze-ui
 ```
 
+### 5. Check it actually works
+
+Downloading is not the same as working. This renders a component and confirms the stylesheet
+came with it:
+
+```bash
+node -e "
+const ui = require('@noduf/unalyze-ui')
+const css = require.resolve('@noduf/unalyze-ui/styles.css')
+console.log(Object.keys(ui).length + ' components, stylesheet at ' + css)
+"
+```
+
+Expect **65 components** and a path ending in `styles.css`.
+
+---
+
+## See what the components look like
+
+One self-contained HTML file — no server, no build, works offline. Every release has one:
+
+**[Releases](https://github.com/NODUF/unalyze-ui/releases)** → newest → download
+`unalyze-ui-<version>.html` → open it in a browser.
+
+It matches the version you installed, so it is a reference rather than a marketing page.
+
 ---
 
 ## Use it
