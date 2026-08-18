@@ -5,38 +5,70 @@ you to change your build.
 
 ---
 
-## 1. Get access
+## 1. Setup — two things, once
 
-The package lives in **GitHub Packages**, not on npmjs, so npm needs to be told two things: where
-to look for the `@noduf` scope, and who you are.
+GitHub Packages requires a token **even to read**, and even for a public package. That is GitHub's
+design, not a choice we made; npmjs is the only registry where `npm install` works logged out.
 
-**Create a token** at [github.com/settings/tokens](https://github.com/settings/tokens) →
-*Generate new token (classic)* → tick **`read:packages`** only. Classic, not fine-grained —
-GitHub Packages for npm does not accept fine-grained tokens yet.
+The good news is that only the second step is per-developer.
 
-**Put it in your shell profile**, not in a file you might commit:
+### A — in your repo, once
 
-```bash
-# ~/.zshrc or ~/.bashrc
-export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
-```
-
-**Add `.npmrc` beside your `package.json`** — this one is safe to commit, it contains no secret:
+Create `.npmrc` next to `package.json` and **commit it**. It contains no secret — only the name of
+an environment variable:
 
 ```ini
 @noduf:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
-> **CI**: give the job a secret with `read:packages` and export it as `GITHUB_TOKEN`.
+### B — on each machine, once
+
+If you have the [GitHub CLI](https://cli.github.com/) — one line, no token to create or store:
+
+```bash
+echo 'export GITHUB_TOKEN=$(gh auth token)' >> ~/.zshrc && source ~/.zshrc
+```
+
+Without it, make a token at [github.com/settings/tokens](https://github.com/settings/tokens) →
+*Generate new token (classic)* → tick **`read:packages`** only. Classic, not fine-grained; GitHub
+Packages for npm does not accept fine-grained tokens yet.
+
+```bash
+echo 'export GITHUB_TOKEN=ghp_xxxxxxxxxxxx' >> ~/.zshrc && source ~/.zshrc
+```
+
+### Then, from now on
 
 ```bash
 npm install @noduf/unalyze-ui
+npm update  @noduf/unalyze-ui
 ```
 
 That is the only package you need. The design tokens are compiled into the stylesheet at build
-time — `@noduf/unalyze-tokens` is published separately only for the case where you want the raw
-values in JavaScript, such as handing a colour to a chart runtime.
+time — `@noduf/unalyze-tokens` is published separately only if you want the raw values in
+JavaScript, such as handing a colour to a chart runtime.
+
+### If it does not work
+
+| What you see | What it means |
+|---|---|
+| `401 Unauthorized` | `GITHUB_TOKEN` is empty **in that shell**. Check with `echo $GITHUB_TOKEN` — a new terminal after editing `~/.zshrc` is the usual fix. |
+| `404 Not Found` | The token is missing `read:packages`, or your account has no access to the repository. |
+| npm sends a literal `${GITHUB_TOKEN}` | The variable was never exported. npm does not warn about this; it just fails as a 401. |
+
+**CI**: in GitHub Actions the built-in `secrets.GITHUB_TOKEN` already works — export it as
+`GITHUB_TOKEN` and the committed `.npmrc` does the rest. Elsewhere, add a repository secret holding
+a `read:packages` token.
+
+**Yarn 2+** reads `.yarnrc.yml`, not `.npmrc`:
+
+```yaml
+npmScopes:
+  noduf:
+    npmRegistryServer: 'https://npm.pkg.github.com'
+    npmAuthToken: '${GITHUB_TOKEN}'
+```
 
 ---
 
