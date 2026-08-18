@@ -1,0 +1,12 @@
+# Copy this to `.npmrc` next to your package.json and COMMIT it.
+#
+# There is no secret here — only the name of an environment variable, which npm
+# expands at install time. The token itself stays in your shell profile.
+#
+# Why this file is needed at all: GitHub Packages requires a token even to READ,
+# and even for a public package. Without these two lines npm looks for @noduf on
+# npmjs.org, does not find it, and reports a 404 that says nothing about the
+# actual cause.
+
+@noduf:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}

@@ -9,9 +9,12 @@ consuming application** — install, import one stylesheet, wrap the app in one 
 npm install @noduf/unalyze-ui
 ```
 
-Two one-time steps before that first install, because GitHub Packages needs a token even to read:
-a committed `.npmrc` in the consuming repo, and one line in each developer's shell. Both are in
-**[docs/INTEGRATION.md](docs/INTEGRATION.md)** — the guide to hand the consuming team. Start there.
+Two one-time steps come before that first install, because GitHub Packages needs a token even to
+read: a committed `.npmrc` in the consuming repo, and one line in each developer's shell.
+
+- **[docs/TEAM-SETUP.md](docs/TEAM-SETUP.md)** — one page. This is the link to send a developer.
+- **[docs/INTEGRATION.md](docs/INTEGRATION.md)** — the full reference: components, theming,
+  overriding, upgrading.
 
 ---
 

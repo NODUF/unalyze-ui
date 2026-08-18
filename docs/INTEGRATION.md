@@ -5,63 +5,55 @@ you to change your build.
 
 ---
 
-## 1. Setup — two things, once
+## 1. Setup
 
-GitHub Packages requires a token **even to read**, and even for a public package. That is GitHub's
-design, not a choice we made; npmjs is the only registry where `npm install` works logged out.
+Three steps, once: a token, a line in your shell, an `.npmrc` in the project. They are in
+**[TEAM-SETUP.md](TEAM-SETUP.md)** — one page, send that link to a new developer.
 
-The good news is that only the second step is per-developer.
+GitHub Packages requires a token even to read, and even for a public package. That is GitHub's
+design; npmjs is the only registry where `npm install` works logged out.
 
-### A — in your repo, once
+<a id="troubleshooting"></a>
 
-Create `.npmrc` next to `package.json` and **commit it**. It contains no secret — only the name of
-an environment variable:
+### Troubleshooting
 
-```ini
-@noduf:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
-
-### B — on each machine, once
-
-If you have the [GitHub CLI](https://cli.github.com/) — one line, no token to create or store:
+npm answers **`404` for four different problems** and does not distinguish between them. This
+tells you which one you have:
 
 ```bash
-echo 'export GITHUB_TOKEN=$(gh auth token)' >> ~/.zshrc && source ~/.zshrc
+echo "1. token set?    ${GITHUB_TOKEN:+yes, ${#GITHUB_TOKEN} chars}${GITHUB_TOKEN:-NO — not set, or not in THIS shell}"
+echo "2. .npmrc here?  $([ -f .npmrc ] && grep -q noduf .npmrc && echo yes || echo 'NO — missing, or wrong folder')"
+echo "3. registry says:"
+npm view @noduf/unalyze-ui version --registry=https://npm.pkg.github.com 2>&1 \
+  | grep -v 'complete log' | tail -2 | sed 's/^npm error /   /'
 ```
 
-Without it, make a token at [github.com/settings/tokens](https://github.com/settings/tokens) →
-*Generate new token (classic)* → tick **`read:packages`** only. Classic, not fine-grained; GitHub
-Packages for npm does not accept fine-grained tokens yet.
+It queries the registry **directly**, bypassing your `.npmrc`. That is the point — it separates
+"my config is wrong" from "my access is wrong", which a plain `npm install` cannot.
 
-```bash
-echo 'export GITHUB_TOKEN=ghp_xxxxxxxxxxxx' >> ~/.zshrc && source ~/.zshrc
-```
-
-### Then, from now on
-
-```bash
-npm install @noduf/unalyze-ui
-npm update  @noduf/unalyze-ui
-```
-
-That is the only package you need. The design tokens are compiled into the stylesheet at build
-time — `@noduf/unalyze-tokens` is published separately only if you want the raw values in
-JavaScript, such as handing a colour to a chart runtime.
-
-### If it does not work
-
-| What you see | What it means |
+| Line 3 says | What it means |
 |---|---|
-| `401 Unauthorized` | `GITHUB_TOKEN` is empty **in that shell**. Check with `echo $GITHUB_TOKEN` — a new terminal after editing `~/.zshrc` is the usual fix. |
-| `404 Not Found` | The token is missing `read:packages`, or your account has no access to the repository. |
-| npm sends a literal `${GITHUB_TOKEN}` | The variable was never exported. npm does not warn about this; it just fails as a 401. |
+| a bare version number | **Token and access are fine.** If `npm install` still fails, the `.npmrc` is missing or in the wrong folder. |
+| `authentication token not provided` | `GITHUB_TOKEN` is empty in this shell — usually a terminal that was never restarted. |
+| `401 Unauthorized` with a token set | The token is wrong, expired, or missing `read:packages`. |
+| `404 Not Found` | Your GitHub account has no access to `NODUF/unalyze-ui`. Ask for it — nothing you can fix locally. |
 
-**CI**: in GitHub Actions the built-in `secrets.GITHUB_TOKEN` already works — export it as
-`GITHUB_TOKEN` and the committed `.npmrc` does the rest. Elsewhere, add a repository secret holding
-a `read:packages` token.
+### CI
 
-**Yarn 2+** reads `.yarnrc.yml`, not `.npmrc`:
+In GitHub Actions the built-in token already works; the committed `.npmrc` does the rest:
+
+```yaml
+- run: npm ci
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+Elsewhere — Vercel, Netlify, Docker — add an environment variable named `GITHUB_TOKEN` holding a
+`read:packages` token.
+
+### Yarn 2+
+
+Reads `.yarnrc.yml`, not `.npmrc`:
 
 ```yaml
 npmScopes:
@@ -69,6 +61,12 @@ npmScopes:
     npmRegistryServer: 'https://npm.pkg.github.com'
     npmAuthToken: '${GITHUB_TOKEN}'
 ```
+
+### Which package
+
+`@noduf/unalyze-ui` is the only one you need — the design tokens are compiled into the stylesheet
+at build time. `@noduf/unalyze-tokens` is published separately only if you want the raw values in
+JavaScript, such as handing a colour to a chart runtime.
 
 ---
 
